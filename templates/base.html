@@ -8,14 +8,17 @@
     <!--CSS-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav_bar.css')}}">
     <!--Boot Strap CSS-->
 
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <header>
+      <div>
+        <a class="header_logo" href="{{url_for('index')}}">Delish!</a>
+      </div>
       <div class="topnav">
-        <a class="active" href="{{url_for('index')}}">Home</a>
         <a href="news">News</a>
         <a href="contact">Contact</a>
         <a href="about">About</a>
