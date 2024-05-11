@@ -1,0 +1,176 @@
+/* Colors */
+:root {
+  --slategrey: #434B63;
+  --peach: #FFDBBA;
+  --coral: #F27935;
+  --turquoise: #4ECDC4;
+  --cream: #fef9ed;
+  --grey: #6C7A89;
+  --red: #f2354f;
+}
+
+/* General */
+html{
+  
+}
+
+body{
+  font-family: 'Playfair Display','Nunito', sans-serif;
+  line-height: 2;
+  background-color: #FA8F11;
+}
+
+h2, h3, h4, h5, h6{
+  display: flex;
+  justify-content: flex-start;
+  font-weight: normal;
+  font-size: 200%;
+  font-style: italic;
+  margin: 0px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Containers */
+.hero_container{
+  margin: 60px 0px 0px 0px;
+  padding: 30px;
+  background-image: url("../images/index_pic.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.calling_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+
+.carousel_container{
+  background-color: var(--peach);
+  padding: 50px 0px 50px 0px;
+}
+
+/* Headers */
+.hero_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calling_header{
+  font-size: 70px;
+}
+
+/* Images */
+.carousel_img{
+  width: 275px;
+  height: 300px;
+  margin: 40px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+/* recipe_carousel */
+.carousel_header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 135px;
+  font-style: normal;
+}
+
+.carousel_wrapper{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 120px 0px 120px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.carousel_button{
+  padding: 0px;
+  border: none;
+  border-radius: 20px;
+  background-color: #EBB14D;
+  width: 100px;
+  height: 40px;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.carousel_button:hover{
+  box-shadow: 10px 5px 5px gray;
+  transition: 0.15s;
+}
+
+/* Home Page */
+.index_title{
+  display: flex;
+  font-size: 90px;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 270px;
+}
+
+/* Media Queries */
+@media (max-width: 575px){
+  html{
+    /* background-position: bottom;
+    background-repeat: no-repeat; */
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  .index_title{
+    font-size: 60px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  .index_title{
+    margin-top: 270px;
+  }
+
+  html{
+    /* background-size: contain; */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html{
+    /* background-size: 160%; */
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  html{
+    /* background-size: contain; */
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1300px) {
+  .carousel_img{
+    width: 250px;
+    height: 275px;
+  }
+}
+
+
+
+
