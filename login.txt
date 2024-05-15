@@ -1,1 +1,5 @@
+//DB login
 mysql -h db.luddy.indiana.edu -u i308s23_calxu --pass=my+sql=i308s23_calxu -D i308s23_calxu
+
+//Starting app.py on silo
+https://cgi.luddy.indiana.edu/~calxu/projects/recipe_web

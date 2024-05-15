@@ -4,8 +4,10 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+//Pathing
 const path = require('path');
-let htmlPath = path.join(__dirname, 'html');
+let htmlPath = path.join(__dirname, 'public/html');
+let cssPath = path.join(__dirname, 'public/css');
 
 app.listen(PORT, (error) =>{
     if(!error){
@@ -17,9 +19,16 @@ app.listen(PORT, (error) =>{
 }
 );
 
+//Setting up statics
+app.use(express.static(cssPath));
+
+//Setting up EJS (View Engine)
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 //Default Page
 app.get('/', (req, res) => {
-    res.sendFile(htmlPath + '/index.html');
+    res.render('index');
 });
 
 //Linked pages on navbar
