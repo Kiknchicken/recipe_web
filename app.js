@@ -1,14 +1,14 @@
-//Connects to server
+//Modules
 const express = require('express');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
 //Pathing
-const path = require('path');
-let htmlPath = path.join(__dirname, 'public/html');
-let cssPath = path.join(__dirname, 'public/css');
+let staticPath = path.join(__dirname, 'public');
 
+//Error catching
 app.listen(PORT, (error) =>{
     if(!error){
         console.log("Server is successfully running, and App is listening on port " + PORT);
@@ -20,7 +20,7 @@ app.listen(PORT, (error) =>{
 );
 
 //Setting up statics
-app.use(express.static(cssPath));
+app.use(express.static(staticPath));
 
 //Setting up EJS (View Engine)
 app.set('view engine', 'ejs');
@@ -31,9 +31,4 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-//Linked pages on navbar
-app.get('/chinese.html', (req, res) => {
-    res.sendFile(htmlPath + '/chinese.html');
-});
 
-//Create end point with html page
