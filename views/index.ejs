@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+
+    <!--Owl Carousel Css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Umai</title>
+
+</head>
+<body>
+    <header>
+        <div class="topnav_background" id="navbar">
+            <div class="topnav">
+                <a href="index.html"><img src="../images/UMAI-ICON-FINAL-02.svg" class="topnav_img"></a>
+                <a href="chinese.html">Chinese</a>
+                <a href="japanese.html">Japanese</a>
+            </div>
+        </div>
+        <script src="js/scrollbar.js"></script>
+    </header>
+
+    <div class="hero_container">
+        <div class="hero_wrapper">
+            <h1 class="index_title">Anyone Can Enjoy</h1>
+            <h2>Satisfaction at Its Finest</h2>
+        </div>
+    </div>
+    <div class="calling_container">
+        <h1 class="calling_header">Recipes Curated For All</h1>
+        <h3>Bring the taste from across the world to your kitchen</h3>
+        <h3>Check Out What Cooking</h3>
+    </div>
+    <div class="carousel_container">
+        <div class="carousel_header">
+            <h3>Japanese Recipes</h3>
+            <form action="japanese.html"><input type="submit" value="Explore >>" class="carousel_button"></form>
+        </div>
+        <div class="carousel_wrapper">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img class="carousel_img" src="../images/Japanese-Chicken-Curry3.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/gyudon.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/katsudon.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/oyakodon.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/tempura_udon.jpg">
+                </div>
+                <div class="item">
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel_container">
+        <div class="carousel_header">
+            <h3>Chinese Recipes</h3>
+            <form action="chinese.html"><input type="submit" value="Explore >>" class="carousel_button"></form>
+        </div>
+        <div class="carousel_wrapper">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img class="carousel_img" src="../images/fried_rice.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/mapo_tofu.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/charsui.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/potstickers.jpg">
+                </div>
+                <div class="item">
+                    <img class="carousel_img" src="../images/tea_eggs.jpg">
+                </div>
+                <div class="item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <footer>
+        <h3>Designed by: Caleb Xu</h3>
+        <h3>Contact:</h3>
+        <h3>Phone: (734)-353-1625</h3>
+        <h3>Email: caleb.y.xu@gmail.com</h3>
+    </footer>
+        
+    <script src="js/cardFlip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 60,
+            dots: true,
+            dotsEach: 1,
+            responsiveClass: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Navbar */
+.topnav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Playfair Display','Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    color: #404040;
+    text-decoration: none;
+}
+  
+.topnav a {
+    float: left;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+  
+.topnav a:hover {
+    background-color: #FFDBBA;
+    transition: 0.5s;
+}
+
+.topnav_img{
+    width: 70px;
+    height: auto;
+    padding: 0px;
+    margin: 0px 30px;
+}
+
+.topnav_background{
+    background-color: #FA8F11;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+/* Flipcard */
+.card{
+    width: 250px;
+    height: 350px;
+    margin: 40px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: 0.15s;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.card:hover{
+    box-shadow: 10px 5px 5px gray;
+}
+
+.card-front,
+.card-back{
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.card-back{
+    background-color: slategray;
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
+.img_box{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0px 40px 0px;
+    padding-left: 120px;
+    font-size: 12px;
+  }
