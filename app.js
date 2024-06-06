@@ -23,7 +23,7 @@ client.query('SELECT * FROM Recipes', (err, res) => {
 });
 
 const app = express();
-const PORT = listen(process.env.PORT);
+const PORT = process.env.PORT || 80;
 
 //Error catching
 app.listen(PORT, (error) =>{
