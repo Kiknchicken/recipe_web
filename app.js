@@ -5,7 +5,7 @@ const { Client } = require('pg');
 
 //Connection to db
 const client = new Client({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.postgres.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
@@ -23,7 +23,7 @@ client.query('SELECT * FROM Recipes', (err, res) => {
 });
 
 const app = express();
-const PORT = 5000;
+const PORT = listen(process.env.PORT);
 
 //Error catching
 app.listen(PORT, (error) =>{
