@@ -1,1 +1,1 @@
-mysql -h db.luddy.indiana.edu -u i308s23_calxu --pass=my+sql=i308s23_calxu -D i308s23_calxu
+Loggin into Heroku CLI: heroku login
