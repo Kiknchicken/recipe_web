@@ -1,26 +1,26 @@
 //Modules
 const express = require('express');
 const path = require('path');
-const mysql = require('mysql');
+const { Client } = require('pg');
 
 //Connection to db
-const connection = mysql.createConnection({
-    host: 'ce0lkuo944ch99.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-    user: 'ui0f2titjq0n1',
-    password: 'p360093112ae0a670da87c352f8b4f99de20b446fa56db0c72ca6da4f692e1b98',
-    database: 'ddns7o9t60mqoc'
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
-//Query
-connection.connect();
+client.connect();
 
-connection.query('SELECT * FROM Recipes', (err, rows, fields) => {
-    if (err) throw err
-
-    console.log('ello');
-})
-
-connection.end()
+//Query 
+client.query('SELECT * FROM Recipes', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 const app = express();
 const PORT = 5000;

@@ -12,5 +12,5 @@ CREATE TABLE Recipes (
     PRIMARY KEY (id)
 ) ENGINE = innodb;
 
-INSERT INTO Recipes (description, ingredients, directions, cuisine_type, meal_type) VALUES
+INSERT INTO recipes (description, ingredients, directions, cuisine_type, meal_type) VALUES
 ('description', 'ingredients', 'directions', 'cuisine_type', 'meal_type');
