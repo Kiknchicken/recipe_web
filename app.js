@@ -5,13 +5,11 @@ const { Client } = require('pg');
 
 //Connection to db
 const client = new Client({
-    connectionString: process.env.postgres.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
     ssl: {
         rejectUnauthorized: false
     }
 });
-
-console.log(process.env.DATABASE_URL);
 
 client.connect();
 
