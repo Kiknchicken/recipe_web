@@ -1,6 +1,6 @@
 //Modules
 import express from 'express';
-import path from path;
+import path from 'path';
 import { createWorker } from 'tesseract.js';
 import { Client } from 'pg';
 
