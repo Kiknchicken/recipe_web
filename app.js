@@ -1,9 +1,4 @@
 //Modules
-const express = require('express');
-const path = require('path');
-const { Client } = require('pg');
-const { createWorker } = require('tesseract.js');
-
 import express from 'express';
 import path from path;
 import { createWorker } from 'tesseract.js';
