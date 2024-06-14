@@ -2,7 +2,7 @@
 import express from 'express';
 import path from 'path';
 import { createWorker } from 'tesseract.js';
-import { Client } from 'pg';
+import * as Client from 'pg';
 
 //Connection to db
 const client = new Client({
