@@ -4,6 +4,11 @@ const path = require('path');
 const { Client } = require('pg');
 const { createWorker } = require('tesseract.js');
 
+import express from 'express';
+import path from path;
+import { createWorker } from 'tesseract.js';
+import { Client } from 'pg';
+
 //Connection to db
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -38,13 +43,12 @@ app.listen(PORT, (error) =>{
 );
 
 //Tesseract js
-const worker = await createWorker('eng');
-
 (async () => {
-    const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
-    console.log(text);
-    await worker.terminate;
-})
+    const worker = await createWorker('eng');
+    const ret = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+    console.log(ret.data.text);
+    await worker.terminate();
+})();
 
 //Setting up statics
 app.use(express.static(path.join(__dirname, 'public')));
