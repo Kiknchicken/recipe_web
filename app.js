@@ -17,7 +17,7 @@ client.connect();
 client.query('SELECT * FROM Recipes', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
-    console.log(JSON.stringify(row));
+    var result = JSON.stringify(row);
   }
   client.end();
 });
