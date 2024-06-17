@@ -7,7 +7,7 @@ import pg from 'pg';
 //Connection to db
 const { Pool, Client } = pg;
 
-const client = new Cool({
+const client = new Client({
     user: 'ui0f2titjq0n1',
     password: 'p360093112ae0a670da87c352f8b4f99de20b446fa56db0c72ca6da4f692e1b98',
     host: 'ce0lkuo944ch99.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
