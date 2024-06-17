@@ -1,5 +1,6 @@
 //Modules
 import express from 'express';
+import { fileURLToPath } from 'url';
 import path from 'path';
 import { createWorker } from 'tesseract.js';
 import pg from 'pg';
@@ -14,16 +15,16 @@ const client = new Client({
     }
   });
   
-client.connect();
+await client.connect();
 
 //Query
-client.query('SELECT NOW();', (err, res) => {
-if (err) throw err;
-for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-}
-client.end();
-});
+await client.query('SELECT NOW();', (err, res) => {
+    if (err) throw err;
+        for (let row of res.rows) {
+            console.log(JSON.stringify(row));
+        }
+        client.end();
+    });
 
 const app = express();
 const PORT = process.env.PORT || 80;
@@ -48,6 +49,7 @@ app.listen(PORT, (error) =>{
 })();
 
 //Setting up statics
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Setting up EJS (View Engine)
