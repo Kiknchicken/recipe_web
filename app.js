@@ -2,26 +2,25 @@
 import express from 'express';
 import path from 'path';
 import { createWorker } from 'tesseract.js';
-import * as Client from 'pg';
+import pg from 'pg';
 
 //Connection to db
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
+const { Pool, Client } = pg;
 
-client.connect();
+const client = new Cool({
+    user: 'ui0f2titjq0n1',
+    password: 'p360093112ae0a670da87c352f8b4f99de20b446fa56db0c72ca6da4f692e1b98',
+    host: 'ce0lkuo944ch99.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
+    port: 5432,
+    database: 'ddns7o9t60mqoc',
+})
 
-//Query 
-client.query('SELECT * FROM Recipes', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    var result = JSON.stringify(row);
-  }
-  client.end();
-});
+await client.connect();
+
+//Query
+console.log(await client.query('SELECT NOW()'));
+
+await client.end();
 
 const app = express();
 const PORT = process.env.PORT || 80;
