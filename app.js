@@ -54,7 +54,7 @@ function callName(req, res, image) {
 
 const image = 'https://tesseract.projectnaptha.com/img/eng_bw.png';
 
-console.log(callName())
+console.log(callName());
 
 //Setting up statics
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
