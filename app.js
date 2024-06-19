@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { createWorker } from 'tesseract.js';
 import pg from 'pg';
+import { spawn } from 'child_process';
 
 //Connection to db
 const { Pool, Client } = pg;
@@ -24,7 +25,7 @@ await client.query('SELECT NOW();', (err, res) => {
             console.log(JSON.stringify(row));
         }
         client.end();
-    });
+});
 
 const app = express();
 const PORT = process.env.PORT || 80;
@@ -40,13 +41,18 @@ app.listen(PORT, (error) =>{
 }
 );
 
-//Tesseract js
-(async () => {
-    const worker = await createWorker('eng');
-    const ret = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
-    console.log(ret.data.text);
-    await worker.terminate();
-})();
+//Pytesseract
+const image = 'https://tesseract.projectnaptha.com/img/eng_bw.png';
+
+function callName(req, res) {
+    //Create new child process to call python script and pass var values to script
+    var python = spawn('python', ['python/script.py'], image);
+
+    //Collect data from script
+    python.stdout.on('data', function(data) {
+        res.send(data.toString());
+    })
+}
 
 //Setting up statics
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
