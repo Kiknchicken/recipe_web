@@ -42,9 +42,7 @@ app.listen(PORT, (error) =>{
 );
 
 //Pytesseract
-const image = 'https://tesseract.projectnaptha.com/img/eng_bw.png';
-
-function callName(req, res) {
+function callName(req, res, image) {
     //Create new child process to call python script and pass var values to script
     var python = spawn('python', ['python/script.py'], image);
 
@@ -53,6 +51,10 @@ function callName(req, res) {
         res.send(data.toString());
     })
 }
+
+const image = 'https://tesseract.projectnaptha.com/img/eng_bw.png';
+
+console.log(callName())
 
 //Setting up statics
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
