@@ -19,7 +19,7 @@ const client = new Client({
 await client.connect();
 
 //Query
-await client.query('SELECT NOW();', (err, res) => {
+client.query('SELECT NOW();', (err, res) => {
     if (err) throw err;
         for (let row of res.rows) {
             console.log(JSON.stringify(row));
