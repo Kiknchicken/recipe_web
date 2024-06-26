@@ -1,26 +1,30 @@
 //Modules
-const express = require('express');
-const path = require('path');
-const { Client } = require('pg');
+import express from 'express';
+import { fileURLToPath } from 'url';
+import path from 'path';
 import { createWorker } from 'tesseract.js';
+import pg from 'pg';
+import { spawn } from 'child_process';
 
 //Connection to db
+const { Pool, Client } = pg;
+
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
-        rejectUnauthorized: false
+      rejectUnauthorized: false
     }
-});
+  });
+  
+await client.connect();
 
-client.connect();
-
-//Query 
-client.query('SELECT * FROM Recipes', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    var result = JSON.stringify(row);
-  }
-  client.end();
+//Query
+client.query('SELECT NOW();', (err, res) => {
+    if (err) throw err;
+        for (let row of res.rows) {
+            console.log(JSON.stringify(row));
+        }
+        client.end();
 });
 
 const app = express();
@@ -37,15 +41,24 @@ app.listen(PORT, (error) =>{
 }
 );
 
-//Tesseract js
-(async () => {
-    const worker = await createWorker('eng');
-    const ret = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
-    console.log(ret.data.text);
-    await worker.terminate();
-})();
+//Pytesseract
+function callName(image) {
+    //Create new child process to call python script and pass var values to script
+    var python = spawn('python', ['python/script.py'], 1);
+
+    //Collect data from script
+    python.stdout.on('data', (data) => {
+        console.log(data);
+    })
+}
+
+const jsonString = '{""}';
+
+callName(image)
+
 
 //Setting up statics
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Setting up EJS (View Engine)
@@ -56,3 +69,5 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+//
