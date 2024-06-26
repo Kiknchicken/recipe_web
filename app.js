@@ -44,7 +44,7 @@ app.listen(PORT, (error) =>{
 //Pytesseract
 function callName(image) {
     //Create new child process to call python script and pass var values to script
-    var python = spawn('python', ['python/script.py'], image);
+    var python = spawn('python', ['python/script.py'], 1);
 
     //Collect data from script
     python.stdout.on('data', (data) => {
@@ -52,7 +52,6 @@ function callName(image) {
     })
 }
 
-const image = 'https://tesseract.projectnaptha.com/img/eng_bw.png';
 const jsonString = '{""}';
 
 callName(image)
@@ -70,3 +69,5 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+//
