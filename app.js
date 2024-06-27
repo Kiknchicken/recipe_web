@@ -41,20 +41,20 @@ app.listen(PORT, (error) =>{
 }
 );
 
-//Pytesseract
-function callName(image) {
-    //Create new child process to call python script and pass var values to script
-    var python = spawn('python', ['python/script.py'], 1);
+// //Pytesseract
+// function callName(image) {
+//     //Create new child process to call python script and pass var values to script
+//     var python = spawn('python', ['python/script.py'], 1);
 
-    //Collect data from script
-    python.stdout.on('data', (data) => {
-        console.log(data);
-    })
-}
+//     //Collect data from script
+//     python.stdout.on('data', (data) => {
+//         console.log(data);
+//     })
+// }
 
-const jsonString = '{""}';
+// const jsonString = '{""}';
 
-callName(image)
+// callName(image);
 
 
 //Setting up statics
