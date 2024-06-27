@@ -3,13 +3,24 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     overflow: hidden;
-    font-family: 'Playfair Display','Nunito', sans-serif;
-    font-size: 20px;
+    font-family: 'Kameron','serif';
+    font-size: 22px;
     font-weight: normal;
     font-style: normal;
-    color: #404040;
     text-decoration: none;
+    margin: 0px 120px;
+    height: 100%;
+}
+
+.topnav button {
+    border-width: 0px;
+    border-radius: 10px;
+    width: 120px;
+    height: 45px;
+    color: #FF7D29;
+    margin-left: 16px;
 }
   
 .topnav a {
@@ -17,6 +28,9 @@
     text-align: center;
     padding: 5px 16px;
     text-decoration: none;
+    color: white;
+    border-right: 2px solid white;
+    height: 100%;
 }
   
 .topnav a:hover {
@@ -24,16 +38,23 @@
     transition: 0.5s;
 }
 
+.topnav_links{
+    display: flex;
+    align-items: center;
+}
+
 .topnav_img{
     width: 70px;
     height: auto;
-    padding: 0px;
-    margin: 0px 30px;
+    padding: 10px 5px 0px 5px;
+    margin: 0px;
+    border-width: 0px;
 }
 
 .topnav_background{
-    background-color: #FA8F11;
+    background-color: #FF7D29;
     width: 100%;
+    height: 95px;
     position: fixed;
     top: 0;
     transition: 0.3s;

@@ -5,6 +5,7 @@ import path from 'path';
 import { createWorker } from 'tesseract.js';
 import pg from 'pg';
 import { spawn } from 'child_process';
+import { google } from GoogleApis;
 
 //Connection to db
 const { Pool, Client } = pg;
@@ -65,9 +66,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-//Default Page
+//Default page
 app.get('/', (req, res) => {
     res.render('index');
 });
 
-//
+//Google login
+app.get('/apis/google_login/callback.js', (req, res) => {
+    const oauth2Client = new google.auto.OAuth2(
+
+    );
+
+    // generate a url that asks permissions for Blogger and Google Calendar scopes
+    const scopes = [
+        'https://www.googleapis.com/auth/blogger',
+        'https://www.googleapis.com/auth/calendar'
+    ];
+  
+    const url = oauth2Client.generateAuthUrl({
+        // 'online' (default) or 'offline' (gets refresh_token)
+        access_type: 'offline',
+  
+        // If you only need one scope you can pass it as a string
+        scope: scopes
+    });
+});
