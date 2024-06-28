@@ -24,22 +24,24 @@
                 <div class="topnav_links">
                     <!--Google Login API-->
                     <script src="https://accounts.google.com/gsi/client" async></script>
+                    <div id="g_id_onload"
+                        data-client_id="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"
+                        data-callback="handleCredentialResponse">
+                    </div>
                     <script>
-                        function handleCredentialResponse(respone) {
-                            console.log("Encoded JWT ID token: " + response.credential);
-                        }
-                        window.onload = function() {
-                            google.accounts.id.initialize({
-                                client_id: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",
-                                callback: data => handleCredentialResponse(data)
-                            });
-                            google.accounts.id.renderButton(
-                                document.getElementById("buttonDiv"),
-                                { theme: "outline", size: "large" }
-                            );
+                        function handleCredentialResponse(response) {
+                            // decodeJwtResponse() is a custom function defined by you
+                            // to decode the credential response.
+                            const responsePayload = decodeJwtResponse(response.credential);
+
+                            console.log("ID: " + responsePayload.sub);
+                            console.log('Full Name: ' + responsePayload.name);
+                            console.log('Given Name: ' + responsePayload.given_name);
+                            console.log('Family Name: ' + responsePayload.family_name);
+                            console.log("Image URL: " + responsePayload.picture);
+                            console.log("Email: " + responsePayload.email);
                         }
                     </script>
-                    <div id="buttonDiv"></div>
                     <button>Join Free</button>
                 </div>
             </div>
