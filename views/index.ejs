@@ -25,17 +25,22 @@
                     <!--Google Login API-->
                     <script src="https://accounts.google.com/gsi/client" async></script>
                     <script>
+                        import { jwtDecode } from "jwt-decode";
+
                         function handleCredentialResponse(response) {
                             // decodeJwtResponse() is a custom function defined by you
                             // to decode the credential response.
-                            const responsePayload = decodeJwtResponse(response.credential);
+                            const responsePayload = jwtDecode(response.credential);
 
-                            console.log("ID: " + responsePayload.sub);
-                            console.log('Full Name: ' + responsePayload.name);
-                            console.log('Given Name: ' + responsePayload.given_name);
-                            console.log('Family Name: ' + responsePayload.family_name);
-                            console.log("Image URL: " + responsePayload.picture);
-                            console.log("Email: " + responsePayload.email);
+                            // console.log("ID: " + responsePayload.sub);
+                            // console.log('Full Name: ' + responsePayload.name);
+                            // console.log('Given Name: ' + responsePayload.given_name);
+                            // console.log('Family Name: ' + responsePayload.family_name);
+                            // console.log("Image URL: " + responsePayload.picture);
+                            // console.log("Email: " + responsePayload.email);
+
+                            const decodedHeader = jwtDecode(token, { header: true });
+                            console.log(decodedHeader);
 
                             login_uri("https://www.google.com");
                         }
