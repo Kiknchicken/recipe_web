@@ -36,6 +36,8 @@
                             console.log('Family Name: ' + responsePayload.family_name);
                             console.log("Image URL: " + responsePayload.picture);
                             console.log("Email: " + responsePayload.email);
+
+                            login_uri("https://www.google.com");
                         }
                         window.onload = function() {
                             google.accounts.id.initialize({
