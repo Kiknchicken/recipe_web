@@ -30,7 +30,6 @@
                         function handleCredentialResponse(response) {
                             // decodeJwtResponse() is a custom function defined by you
                             // to decode the credential response.
-                            const responsePayload = jwtDecode(response.credential);
 
                             // console.log("ID: " + responsePayload.sub);
                             // console.log('Full Name: ' + responsePayload.name);
@@ -41,8 +40,6 @@
 
                             const decodedHeader = jwtDecode(token, { header: true });
                             console.log(decodedHeader);
-
-                            login_uri("https://www.google.com");
                         }
                         window.onload = function() {
                             google.accounts.id.initialize({
