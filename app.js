@@ -70,7 +70,14 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.post('/', (req, res) => {
+    const { parcel } = req.body;
+    
+})
+
 //User home page
 app.get('/index/', (req, res) => {
     res.render('userLanding')
-})
+});
+
+

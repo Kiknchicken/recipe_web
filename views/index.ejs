@@ -24,37 +24,25 @@
                 <div class="topnav_links">
                     <!--Google Login API-->
                     <script src="https://accounts.google.com/gsi/client" async></script>
-                    <script type="module">
-                        import { jwtDecode } from "jwt-decode";
-
-                        function handleCredentialResponse(response) {
-                            console.log('jwt func');
-                            // decodeJwtResponse() is a custom function defined by you
-                            // to decode the credential response.
-
-                            // console.log("ID: " + responsePayload.sub);
-                            // console.log('Full Name: ' + responsePayload.name);
-                            // console.log('Given Name: ' + responsePayload.given_name);
-                            // console.log('Family Name: ' + responsePayload.family_name);
-                            // console.log("Image URL: " + responsePayload.picture);
-                            // console.log("Email: " + responsePayload.email);
-                            const decoded = jwtDecode(response);
-                            console.log(decoded);
-
-                        }
-                        window.onload = function() {
-                            google.accounts.id.initialize({
-                                client_id: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",
-                                callback: data => handleCredentialResponse(data)
-                            });
-                            google.accounts.id.renderButton(
-                                document.getElementById("buttonDiv"),
-                                { theme: "outline", size: "larger" }
-                            );
-                            console.log("IT WORKS");
+                    <div id="g_id_onload"
+                        data-client_id="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" 
+                        data-login_uri="https://umai-site-fc33abfe2d2d.herokuapp.com/"
+                        data-auto_prompt="false"
+                        data-callback="handleCredentialResponse">
+                    </div>
+                    <script>
+                        function handelCredentialResponse(response) {
+                            console.log("ello");
                         }
                     </script>
-                    <div id="buttonDiv"></div>
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-size="large"
+                        data-theme="outline"
+                        data-text="sign_in_with"
+                        data-shape="rectangular"
+                        data-logo_alignment="left">
+                    </div>
                     <button>Join Free</button>
                 </div>
             </div>
