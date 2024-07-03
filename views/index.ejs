@@ -24,7 +24,9 @@
                 <div class="topnav_links">
                     <!--Google Login API-->
                     <script src="https://accounts.google.com/gsi/client" async></script>
-                    <script>
+                    <script type="module">
+                        import { jwtDecode } from "jwt-decode";
+
                         function handleCredentialResponse(response) {
                             console.log('jwt func');
                             // decodeJwtResponse() is a custom function defined by you
@@ -36,11 +38,9 @@
                             // console.log('Family Name: ' + responsePayload.family_name);
                             // console.log("Image URL: " + responsePayload.picture);
                             // console.log("Email: " + responsePayload.email);
-                            let token = {};
-                            token.raw = response;
-                            token.header = JSON.parse(window.atob(response.split('.')[0]));
-                            token.payload = JSON.parse(window.atob(response.split('.')[1]));
-                            console.log(token);
+                            const decoded = jwtDecode(response);
+                            console.log(decoded);
+
                         }
                         window.onload = function() {
                             google.accounts.id.initialize({
