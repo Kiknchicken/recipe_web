@@ -38,7 +38,7 @@
                         window.onload = function () {
                             google.accounts.id.initialize({
                                 client_id: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",
-                                callback: function (data) {
+                                callback: function () {
                                     console.log(response);
                                     let base64Url = response.split('.')[1];
                                     let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
