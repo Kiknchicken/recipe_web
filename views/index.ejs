@@ -26,7 +26,7 @@
                     <script src="https://accounts.google.com/gsi/client" async></script>
                     <script>
                         function handleCredentialResponse(response) {
-                            console.log(typeof response);
+                            console.log(response);
                             let base64Url = response.split('.')[1];
                             let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
                             let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
