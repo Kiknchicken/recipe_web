@@ -6,6 +6,21 @@ import { createWorker } from 'tesseract.js';
 import pg from 'pg';
 import { spawn } from 'child_process';
 
+//Init
+const app = express();
+const PORT = process.env.PORT || 80;
+
+//Error catching
+app.listen(PORT, (error) =>{
+    if(!error){
+        console.log("Server is successfully running, and App is listening on port " + PORT);
+    }
+    else{
+        console.log("Error occured, server can't start", error);
+    }
+}
+);
+
 //Routes
 import { router as userRoute } from './routes/userLanding.js';
 app.use("/userRoute", userRoute);
@@ -30,20 +45,6 @@ client.query('SELECT NOW();', (err, res) => {
         }
         client.end();
 });
-
-const app = express();
-const PORT = process.env.PORT || 80;
-
-//Error catching
-app.listen(PORT, (error) =>{
-    if(!error){
-        console.log("Server is successfully running, and App is listening on port " + PORT);
-    }
-    else{
-        console.log("Error occured, server can't start", error);
-    }
-}
-);
 
 // //Pytesseract
 // function callName(image) {
