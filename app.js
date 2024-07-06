@@ -7,7 +7,7 @@ import pg from 'pg';
 import { spawn } from 'child_process';
 
 //Routes
-import { router as userRoute } from './routes/userLanding';
+import { router as userRoute } from './routes/userLanding.js';
 app.use("/userRoute", userRoute);
 
 //Connection to db
