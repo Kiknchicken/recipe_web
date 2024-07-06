@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     console.log("userlanding");
     res.render("userLanding");
+    console.log(localStorage.getItem("jwt"));
 });
 
 router.put("/", (req, res) => {
