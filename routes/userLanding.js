@@ -1,19 +1,19 @@
 import express from 'express';
 const router = express.Router();
 
-router.get("/users", (req, res) => {
+router.get("/", (req, res) => {
     console.log("userlanding");
 });
 
-router.post("/users", (req, res) => {
+router.post("/", (req, res) => {
     console.log("userlanding");
 });
 
-router.put("/users", (req, res) => {
+router.put("/", (req, res) => {
     console.log("userlanding");
 });
 
-router.delete("/users", (req, res) => {
+router.delete("/", (req, res) => {
     console.log("userlanding");
 });
 

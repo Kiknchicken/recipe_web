@@ -23,7 +23,7 @@ app.listen(PORT, (error) =>{
 
 //Routes
 import { router as userRoute } from './routes/userLanding.js';
-app.use("/userRoute", userRoute);
+app.use("/home", userRoute);
 
 //Connection to db
 const { Pool, Client } = pg;
