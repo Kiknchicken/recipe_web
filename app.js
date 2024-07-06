@@ -6,6 +6,10 @@ import { createWorker } from 'tesseract.js';
 import pg from 'pg';
 import { spawn } from 'child_process';
 
+//Routes
+import { router as userRoute } from './routes/userLanding';
+app.use("/userRoute", userRoute);
+
 //Connection to db
 const { Pool, Client } = pg;
 
@@ -74,9 +78,4 @@ app.post('/', (req, res) => {
     const { parcel } = req.body;
     
 })
-
-//User home page
-app.get('/index/', (req, res) => {
-    res.render('userLanding')
-});
 
