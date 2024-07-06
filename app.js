@@ -80,4 +80,3 @@ app.get('/index/', (req, res) => {
     res.render('userLanding')
 });
 
-
