@@ -1,5 +1,9 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
+
 const router = express.Router();
+
+router.use(cookieParser());
 
 router.get("/", (req, res) => {
     console.log("userlanding");
@@ -10,9 +14,7 @@ router.post("/", (req, res) => {
     console.log("userlanding");
 
     //Grabbing user login cookie
-    let name = "payload=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    console.log(decodedCookie);
+    console.log(res.send(req.cookies));
 
     res.render("userLanding");
 });
