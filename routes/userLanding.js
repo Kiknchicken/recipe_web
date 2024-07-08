@@ -8,6 +8,12 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     console.log("userlanding");
+
+    //Grabbing user login cookie
+    let name = "payload=";
+    let decodedCookie = decodeURIComponent(documnet.cookie);
+    console.log(decodedCookie);
+
     res.render("userLanding");
 });
 

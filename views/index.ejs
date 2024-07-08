@@ -34,7 +34,10 @@
                                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                             }).join(''));
 
-                            console.log(jsonPayload);
+                            const d = new Date();
+                            d.setTime(d.getTime() + (1*24*60*60*1000));
+                            let expires = "expires" + d.toUTCString();
+                            document.cookie = "payload" + "=" + jsonPayload + ";" + expires + ";path=/";
                         }
 
                         window.onload = function () {
