@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
     console.log("userlanding");
 
     //Grabbing user login cookie
-    console.log(res.send(req.cookies));
+    console.log(req.cookies);
 
     res.render("userLanding");
 });
