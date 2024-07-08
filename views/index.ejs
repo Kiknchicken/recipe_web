@@ -34,7 +34,7 @@
                                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                             }).join(''));
 
-                            localStorage.setItem("jwt", jsonPayload);
+                            console.log(jsonPayload);
                         }
 
                         window.onload = function () {
