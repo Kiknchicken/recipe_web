@@ -11,7 +11,7 @@ router.post("/", (req, res) => {
 
     //Grabbing user login cookie
     let name = "payload=";
-    let decodedCookie = decodeURIComponent(documnet.cookie);
+    let decodedCookie = decodeURIComponent(document.cookie);
     console.log(decodedCookie);
 
     res.render("userLanding");
