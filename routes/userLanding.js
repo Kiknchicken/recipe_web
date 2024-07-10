@@ -12,11 +12,11 @@ router.get("/", (req, res) => {
     res.render("userLanding");
 });
 
-router.post("/", (req, res) => {
+router.post("/", (req, res, credential) => {
     console.log("userlanding");
 
     //Handling JWT token response
-    let token = res.credential;
+    let token = credential;
     // let deocdedToken = jwtDecode(token);
 
     console.log(typeof token);
