@@ -16,10 +16,10 @@ router.post("/", (req, res) => {
     console.log("userlanding");
 
     //Handling JWT token response
-    let token = res.credential
-    let deocdedToken = jwtDecode(token);
+    let token = res.credential;
+    // let deocdedToken = jwtDecode(token);
 
-    console.log(deocdedToken);
+    console.log(typeof token);
     res.render("userLanding");
 });
 
