@@ -1,5 +1,6 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import { jwtDecode } from "jwt-decode";
 import util from 'util';
 
 const router = express.Router();
@@ -14,10 +15,11 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     console.log("userlanding");
 
-    //Grabbing user login cookie
-    let decodedCookie = decodeURIComponent(req.cookies);
-    console.log(util.inspect(decodedCookie, false, null));
+    //Handling JWT token response
+    let token = res.credential
+    let deocdedToken = jwtDecode(token);
 
+    console.log(deocdedToken);
     res.render("userLanding");
 });
 

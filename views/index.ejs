@@ -34,7 +34,7 @@
                                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                             }).join(''));
 
-                            document.cookie = "payload1" + "=" + jsonPayload;
+                            document.cookie = "payload" + "=" + jsonPayload;
                         }
 
                         window.onload = function () {
