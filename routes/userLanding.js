@@ -14,12 +14,22 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+    async function verify() {
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",  // Specify the CLIENT_ID of the app that accesses the backend
+            // Or, if multiple clients access the backend:
+            //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
+        });
+    }
     console.log("userlanding");
 
     //Handling JWT token response
-    console.log(req.body);
+    const payload = ticket.getPayload();
+    const userid = payload['sub'];
 
-    console.log(typeof token);
+    console.log(payload);
+
     res.render("userLanding");
 });
 
