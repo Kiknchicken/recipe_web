@@ -13,22 +13,12 @@ router.get("/", (req, res) => {
     res.render("userLanding");
 });
 
-router.post("/", (req, res, credential) => {
-    async function verify() {
-        const ticket = await client.verifyIdToken({
-            idToken: credential,
-            audience: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",
-        });
-
-        const payload = ticket.getPayload();
-        const userid = payload['sub'];
-    }
+router.post("/", (req, res) => {
     console.log("userlanding");
 
     //Handling JWT token response
-    const client  = new OAuth2Client();
+    console.log(req.body);
 
-    verify().catch(console.error);
     console.log(typeof token);
     res.render("userLanding");
 });
