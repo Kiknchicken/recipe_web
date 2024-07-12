@@ -14,6 +14,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+    const client = new OAuth2Client();
+
     async function verify() {
         const ticket = await client.verifyIdToken({
             idToken: token,
