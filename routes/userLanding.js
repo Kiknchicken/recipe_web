@@ -23,14 +23,16 @@ router.post("/", (req, res) => {
             // Or, if multiple clients access the backend:
             //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
         });
+
+        const payload = ticket.getPayload();
+        const userid = payload['sub'];
+
+        console.log(payload);
     }
     console.log("userlanding");
 
     //Handling JWT token response
-    const payload = ticket.getPayload();
-    const userid = payload['sub'];
-
-    console.log(payload);
+    verify().catch(console.error);
 
     res.render("userLanding");
 });
