@@ -1,10 +1,6 @@
 //Modules
-import express from 'express';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import { createWorker } from 'tesseract.js';
-import pg from 'pg';
-import { spawn } from 'child_process';
+const express = require("express");
+const path = require("path");
 
 //Init
 const app = express();
@@ -22,53 +18,16 @@ app.listen(PORT, (error) =>{
 );
 
 //Routes
-import { router as userRoute } from './routes/userLanding.js';
+const userRoute = require('./routes/userLanding');
+
 app.use("/home", userRoute);
 
-//Connection to db
-const { Pool, Client } = pg;
-
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-  });
-  
-await client.connect();
-
-//Query
-client.query('SELECT NOW();', (err, res) => {
-    if (err) throw err;
-        for (let row of res.rows) {
-            console.log(JSON.stringify(row));
-        }
-        client.end();
-});
-
-// //Pytesseract
-// function callName(image) {
-//     //Create new child process to call python script and pass var values to script
-//     var python = spawn('python', ['python/script.py'], 1);
-
-//     //Collect data from script
-//     python.stdout.on('data', (data) => {
-//         console.log(data);
-//     })
-// }
-
-// const jsonString = '{""}';
-
-// callName(image);
-
-
 //Setting up statics
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('public')));
 
 //Setting up EJS (View Engine)
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join('views'));
 
 //Default page
 app.get('/', (req, res) => {
@@ -77,6 +36,5 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     const { parcel } = req.body;
-    
-})
+});
 
