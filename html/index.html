@@ -22,24 +22,8 @@
             <div class="topnav">
                 <a href="index.html" style="border-width: 0px; padding: 0px;";><img src="../public/images/UMAI-ICON-FINAL-02.svg" class="topnav_img"></a>
                 <div class="topnav_links">
-                    <!--Google Login API-->
-                    <script src="https://accounts.google.com/gsi/client" async></script>
-                    <script>
-                        function handleCredentialResponse(respone) {
-                            console.log("Encoded JWT ID token: " + response.credential);
-                        }
-                        window.onload = function() {
-                            google.accounts.id.initialize({
-                                client_id: "630460929969-47is0aidbr8r9jitmhd12v3m6000875b.apps.googleusercontent.com",
-                                callback: handleCredentialResponse
-                            });
-                            google.accounts.id.renderButton(
-                                document.getElementById("buttonDiv"),
-                                { theme: "outline", size: "large" }
-                            );
-                        }
-                    </script>
-                    <div id="buttonDiv"></div>
+                    <a href="/home">Login</a>
+                    <a href="/home">Discover</a>
                     <button>Join Free</button>
                 </div>
             </div>
