@@ -1,11 +1,10 @@
 //Modules
 const express = require('express');
-
-//Defining routing object
+const path = require("path");
 const router = express.Router();
 
 //Setting up statics
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 router.get("/", (req, res) => {
     console.log("userlanding");
