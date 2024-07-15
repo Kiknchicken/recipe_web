@@ -20,7 +20,7 @@ app.listen(PORT, (error) =>{
 );
 
 //Routes
-const userRoute = require('routes/userLanding');
+const userRoute = require('./routes/userLanding');
 
 app.use("/home", userRoute);
 
