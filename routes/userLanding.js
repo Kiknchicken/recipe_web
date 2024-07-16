@@ -11,7 +11,7 @@ router.use(express.static(path.join(__dirname, '..', 'public')));
 router.get("/", (req, res) => {
     console.log("userlanding");
     res.render("userLanding");
-    console.log(__dirname);
+    console.log(path.join(__dirname, '..', 'public'));
 });
 
 router.post("/", (req, res) => {
