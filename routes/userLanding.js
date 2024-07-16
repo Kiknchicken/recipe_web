@@ -4,11 +4,11 @@ const path = require("path");
 const router = express.Router();
 
 //Setting up statics
-router.use(express.static(path.join(__dirname, '../public')));
+router.use(express.static(path.join(__dirname, '..', 'public')));
 
 //Setting up EJS (View Engine)
 router.set('view engine', 'ejs');
-router.set('views', path.join('../views'));
+router.set('views', path.join('..', 'views'));
 
 router.get("/", (req, res) => {
     console.log("userlanding");
