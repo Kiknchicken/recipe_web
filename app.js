@@ -25,7 +25,7 @@ const userRoute = require('./routes/userLanding');
 app.use("/home", userRoute);
 
 //Setting up statics
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Setting up EJS (View Engine)
 app.set('view engine', 'ejs');
