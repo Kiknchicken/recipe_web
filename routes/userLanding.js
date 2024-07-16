@@ -7,8 +7,8 @@ const router = express.Router();
 router.use(express.static(path.join(__dirname, '../public')));
 
 //Setting up EJS (View Engine)
-app.set('view engine', 'ejs');
-app.set('views', path.join('../views'));
+router.set('view engine', 'ejs');
+router.set('views', path.join('../views'));
 
 router.get("/", (req, res) => {
     console.log("userlanding");
