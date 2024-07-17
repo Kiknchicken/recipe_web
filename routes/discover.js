@@ -8,6 +8,7 @@ router.use(express.static(path.join(__dirname, '..', 'public')));
 
 //Seting EJS
 router.set('view engine', 'ejs');
+router.set('views', path.join('views'));
 
 router.get("/", (req, res) => {
     console.log("discover");
