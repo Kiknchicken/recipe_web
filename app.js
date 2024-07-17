@@ -35,7 +35,7 @@ app.set('views', path.join('views'));
 
 //Default page
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { name: 'Guest' });
 });
 
 app.post('/', (req, res) => {
