@@ -8,7 +8,7 @@ router.use(express.static(path.join(__dirname, '..', 'public')));
 
 router.get("/", (req, res) => {
     console.log("discover");
-    res.render("discover");
+    res.render("discover", { name: 'Guest' });
     console.log(path.join(__dirname, '..', 'public'));
 });
 
