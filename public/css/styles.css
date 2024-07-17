@@ -35,6 +35,8 @@
   
 .topnav a:hover {
     background-color: #FFDBBA;
+    color: black;
+    padding: 35px 25px;
     transition: 0.5s;
 }
 

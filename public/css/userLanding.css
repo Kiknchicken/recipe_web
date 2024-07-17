@@ -8,22 +8,37 @@ body {
 
 footer {
     background-color: #FF7D29;
+    margin: 80px 0px 0px 0px;
 }
 
 #content_wrapper{
     margin: 0px 250px;
 }
 
+/* Separator */
 .separator{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
     width: auto;
     background-color: #FF7D29;
     margin-top: 100px;
-    padding-left: 50px;
+    padding: 0px 50px;
     font-size: 20px;
+}
+
+.separator a{
+    text-decoration: none; 
+    color: white;
+    border-bottom: 2px solid white;
+    padding: 10px;
+}
+
+.separator a:hover{
+    background-color: #FFDBBA;
+    color: black;
+    transition: 0.2s;
 }
 
 /* Header */
@@ -56,7 +71,7 @@ footer {
 .item {
     width: 200px;
     height: 300px;
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 
 .carousel_overlay{
@@ -88,6 +103,13 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 100px;
+}
+
+.grid_container a{
+    text-decoration: none; 
+    color: #FF7D29;
+    background-color: white;
+    padding: 10px 15px;
 }
 
 .grid_display{
