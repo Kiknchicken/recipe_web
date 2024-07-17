@@ -6,6 +6,9 @@ const router = express.Router();
 //Setting up statics
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
+//Seting EJS
+router.set('view engine', 'ejs');
+
 router.get("/", (req, res) => {
     console.log("discover");
     res.render("discover", { name: 'Guest' });
