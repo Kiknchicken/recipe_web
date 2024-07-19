@@ -21,22 +21,22 @@ let fried_rice = {
 };
 
 //Connection to db
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
+// const client = new Client({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false
+//   }
+// });
 
-client.connect();
+// client.connect();
 
-client.query('SELECT NOW()', (err, res) => {
-    if (err) throw err;
-        for (let row of res.rows) {
-            console.log(JSON.stringify(row));
-        }
-    client.end();
-});
+// client.query('SELECT NOW()', (err, res) => {
+//     if (err) throw err;
+//         for (let row of res.rows) {
+//             console.log(JSON.stringify(row));
+//         }
+//     client.end();
+// });
 
 //Routes
 router.get("/", (req, res) => {
