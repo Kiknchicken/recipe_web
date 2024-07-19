@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 80;
 
-//Error catching
+//Error catch
 app.listen(PORT, (error) =>{
     if(!error){
         console.log("Server is successfully running, and App is listening on port " + PORT);
