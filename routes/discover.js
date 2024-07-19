@@ -13,7 +13,7 @@ const num_cards = 5;
 //Recipes
 let fried_rice = {
     title: "Fried Rice",
-    image: "images/fried-rice.jpg",
+    image: "images/fried_rice.jpg",
     video: "https://www.youtube.com/embed/Dk0axPbD2pc?si=jLvz_0OgrrVDpCxZ",
     description: "Delicious and easy recipe for a chill family dinner",
     ingredients: "2 Eggs, 2 Boneless Chicken Thighs, 1 Cup Chopped Ham, 1/2 Cup Shitake Mushrooms Chopped, 2 Cloves of Garlic Crushed, 1/2 Pound of Frozen Peas, 3 Tbsp Soy Sauce, 3 Tbsp Oyster Sauce, Sesame Seeds, 4 1/2 Cups of Cooked Rice (Prefered Cold), Salt, Vegtable Oil, 1 Tbsp Butter",
