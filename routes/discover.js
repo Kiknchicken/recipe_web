@@ -41,7 +41,7 @@ let fried_rice = {
 //Routes
 router.get("/", (req, res) => {
     console.log("discover");
-    res.render("discover", { name: 'Guest', cards_num: cards_num, fried_rice: fried_rice});
+    res.render("discover", { name: 'Guest', cards_num: cards_num });
     console.log(path.join(__dirname, '..', 'public'));
 });
 
