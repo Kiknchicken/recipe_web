@@ -42,7 +42,7 @@ client.query('SELECT NOW()', (err, res) => {
 //Routes
 router.get("/", (req, res) => {
     console.log("discover");
-    res.render("discover", { name: 'Guest', cards_num: cards_num, fried_rice: fried_rice});
+    res.render("discover", { name: 'Guest', num_cards: num_cards, fried_rice: fried_rice});
     console.log(path.join(__dirname, '..', 'public'));
 });
 
