@@ -12,6 +12,7 @@ const num_cards = 5;
 
 //Recipes
 let fried_rice = [
+    "1",
     "Fried Rice",
     "images/fried_rice.jpg",
     "https://www.youtube.com/embed/Dk0axPbD2pc?si=jLvz_0OgrrVDpCxZ",
