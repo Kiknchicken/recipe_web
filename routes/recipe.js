@@ -13,11 +13,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    const formData = JSON.stringify(req.body);
-    console.log(formData);
-    console.log("POGGO DATA");
-
-    res.render("recipes post");
+    res.send('Your id is ${req.body.id}');
+    res.render("recipes");
 });
 
 module.exports = router;
