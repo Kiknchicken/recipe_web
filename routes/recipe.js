@@ -13,7 +13,11 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    res.render("recipes");
+    const formData = req.body;
+    console.log(formData);
+    console.log("POGGO DATA");
+
+    res.render("recipes post");
 });
 
 module.exports = router;
