@@ -1,10 +1,12 @@
 <div class="card">
     <img src=<%= fried_rice[1] %> class="card_img">
-    <h2 class="card_title"><%=  fried_rice[0] %></h2>
-    <ul class="card_description_more">
-        <li><%= fried_rice[3] %> min</li>
-        <li>Serving: <%= fried_rice[4] %></li>
-    </ul>
-    <a class="card_link" href="/recipe">View Recipe</a>
-    <p><%= fried_rice[6] %></p>
+    <div card_container_info>
+        <h2 class="card_title"><%=  fried_rice[0] %></h2>
+        <ul class="card_info">
+            <li><%= fried_rice[3] %> min</li>
+            <li>Serving: <%= fried_rice[4] %></li>
+        </ul>
+        <a class="card_link" href="/recipe">View Recipe</a>
+        <p><%= fried_rice[6] %></p>
+    </div>
 </div>
