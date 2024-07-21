@@ -6,14 +6,14 @@ const router = express.Router();
 //Setting up statics
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
-// router.get("/", (req, res) => {
-//     console.log("recipes");
-//     res.render("recipe");
-//     console.log(path.join(__dirname, '..', 'public'));
-// });
+router.get("/", (req, res) => {
+    console.log("recipes");
+    res.render("recipe");
+    console.log(path.join(__dirname, '..', 'public'));
+});
 
 router.post("/", (req, res) => {
-    const formData = req.body;
+    const formData = JSON.stringify(req.body);
     console.log(formData);
     console.log("POGGO DATA");
 
