@@ -20,9 +20,11 @@ app.listen(PORT, (error) =>{
 //Routes
 const userRoute = require('./routes/userLanding');
 const userDiscover = require('./routes/discover');
+const recipe = require('./routes/recipe');
 
 app.use("/home", userRoute);
 app.use("/discover", userDiscover);
+app.use("/recipe", recipe);
 
 //Setting up statics
 app.use(express.static(path.join(__dirname, 'public')));
