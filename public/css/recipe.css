@@ -10,105 +10,68 @@
 }
 
 /* General */
-html{
-    font-family:'Nunito', sans-serif;
-    font-weight: normal;
-    color: black;
-    line-height: 1.5;
-    background-color: #fffef7;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-}
-
-body{
-    margin: 0px;
-}
-  
-h1, h2, h4, h5, h6{
-    display: flex;
-    justify-content: flex-start;
-    font-family: 'Playfair Display','Nunito', sans-serif;
-    font-weight: normal;
-    font-size: 200%;
-    color: black;
-    margin: 0px;
-}
-
-h3{
-    display: flex;
-    align-self: flex-start;
-    margin-top: 10px;
-    font-weight: normal;
-    font-style: italic;
-    color: gray;
-}
-
-ul{
-    margin: 0px;
-}
-
-li{
-    margin-bottom: 17px;
-}
-
-li::marker{
-    font-weight: bold;
-}
-
-iframe{
-    display: flex;
-    align-self: center;
-    width: 60%;
+img {
     height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 40px 0px;
 }
 
-/* Recipe page container */
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px 130px;
-    background-color: white;
+h1, h2, h3{
+    font-weight: normal;
+    margin-bottom: 40px;
 }
 
-/* Recipe Page Misc */
-
-.recipe_title{
+h1 {
     font-size: 60px;
-    color: black;
-    border-bottom: solid 2px black;
-    border-style: none none double;
-    margin: 65px 100px 0px 100px;
-    padding-left: 25px;
-    /* background-color: #fcf8e2; */
-    /* background-color: #DBB360; */
-    background-color: rgb(250, 238, 200);
 }
 
-/* Ingredients */
-.ingredients{
+ul {
+    margin: 0px;
+    padding: 0px 10px;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+iframe {
+    border-top: solid black 1px;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    margin: 200px 250px;
+}
+
+/* Left */
+#container_left {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    padding: 10px 30px 7px 10px;
-    margin: 20px 50px 0px 20px;
-    background-color: #f5f3e9;
-    border-radius: 20px;
+    margin-right: 200px;
 }
 
-/* Video */
-.video{
+#ingredients_wrapper {
+    padding-left: 15px;
+    padding-top: 40px;
+    border-top: solid black 1px;
+}
+
+/* Right */
+#container_right {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 20px 10px 20px 10px;
 }
 
-/* Instructions */
-.instructions{
-    padding: 10px 30px 10px 30px;
-    margin: 10px 10px 10px 10px;
-    background-color: #f5f3e9;
-    border-radius: 20px;
+#instructions_wrapper {
+    border-top: solid 1px black;
+    padding-top: 40px;
+    padding-left: 15px;
 }
 
 /* Media Queries */
