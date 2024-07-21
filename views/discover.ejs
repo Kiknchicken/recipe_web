@@ -33,9 +33,11 @@
             <h1>Welcome <%= name %></h1>
         </div>
 
-        <% for (let i = 0; i < num_cards; i++) { %>
-            <%- include('partials/recipe_card.ejs') %>
-        <% } %>
+        <div class="card_container">
+            <% for (let i = 0; i < num_cards; i++) { %>
+                <%- include('partials/recipe_card.ejs') %>
+            <% } %>
+        </div>  
     </div>
 </body>
 </html>
