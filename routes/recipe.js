@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-    res.send('Your id is ${req.body.id}');
+    console.log(req.body.id);
     res.render("recipes");
 });
 
