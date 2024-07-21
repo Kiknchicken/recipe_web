@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     console.log(req.body.id);
-    res.render("recipes");
+    res.render("recipe");
 });
 
 module.exports = router;
