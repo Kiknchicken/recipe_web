@@ -1,32 +1,8 @@
 //Modules
-import express from 'express';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import { createWorker } from 'tesseract.js';
-import pg from 'pg';
-import { spawn } from 'child_process';
+const express = require("express");
+const path = require("path");
 
-//Connection to db
-const { Pool, Client } = pg;
-
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-  });
-  
-await client.connect();
-
-//Query
-client.query('SELECT NOW();', (err, res) => {
-    if (err) throw err;
-        for (let row of res.rows) {
-            console.log(JSON.stringify(row));
-        }
-        client.end();
-});
-
+//Init
 const app = express();
 const PORT = process.env.PORT || 80;
 
@@ -41,33 +17,28 @@ app.listen(PORT, (error) =>{
 }
 );
 
-//Pytesseract
-function callName(image) {
-    //Create new child process to call python script and pass var values to script
-    var python = spawn('python', ['python/script.py'], 1);
+//Routes
+const userRoute = require('./routes/userLanding');
+const userDiscover = require('./routes/discover');
+const recipe = require('./routes/recipe');
 
-    //Collect data from script
-    python.stdout.on('data', (data) => {
-        console.log(data);
-    })
-}
-
-const jsonString = '{""}';
-
-callName(image)
-
+app.use("/home", userRoute);
+app.use("/discover", userDiscover);
+app.use("/recipe", recipe);
 
 //Setting up statics
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Setting up EJS (View Engine)
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join('views'));
 
-//Default Page
+//Default page
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { name: 'Guest' });
 });
 
-//
+app.post('/', (req, res) => {
+    const { parcel } = req.body;
+});
+

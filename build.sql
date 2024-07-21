@@ -12,5 +12,12 @@ CREATE TABLE Recipes (
     PRIMARY KEY (id)
 ) ENGINE = innodb;
 
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT,
+    username TEXT,
+    email TEXT,
+    PRIMARY KEY(id)
+) ENGINE = innodb;
+
 INSERT INTO recipes (description, ingredients, directions, cuisine_type, meal_type) VALUES
 ('description', 'ingredients', 'directions', 'cuisine_type', 'meal_type');
