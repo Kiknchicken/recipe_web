@@ -1,4 +1,11 @@
 /* General */
+p {
+    margin: 0px;
+}
+
+li {
+    margin-bottom: 7px;
+}
 
 #discover_container{
     display: flex;
@@ -18,8 +25,32 @@
 .card {
     width: 250px;
     height: 400px;
-    border: solid black 2px;
-    margin: 20px;
+    margin: 40px;
+    padding: 10px;
+    background-color: #D3D3D3;
+    overflow: hidden;
+}
+
+.card_overlay {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card_description {
+    
+}
+
+.card_description_more {
+
+}
+
+.card_title{
+    margin-bottom: 0px;
+}
+
+.card:hover {
+    height: 500px;
+    transition: 0.5s;
 }
 
 .card_img {
