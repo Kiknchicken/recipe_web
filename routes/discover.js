@@ -43,7 +43,6 @@ client.query('SELECT * FROM recipes', (err, res) => {
     if (err) throw err;
         for (let row of res.rows) {
             data.push(row);
-            console.log(typeof row);
         }
     client.end();
 });
@@ -54,7 +53,6 @@ router.get("/", (req, res) => {
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data, id: id});
     console.log(path.join(__dirname, '..', 'public'));
     console.log(data[0]);
-    console.log(data)
 });
 
 router.post("/", (req, res) => {
