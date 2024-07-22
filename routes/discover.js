@@ -43,14 +43,15 @@ function recipe() {
         client.end();
     });
 
-    return data, data.length;
+    return data;
 }
 
 //Routes
 router.get("/", (req, res) => {
     console.log("discover");
 
-    data, num_cards = recipe();
+    let data = recipe();
+    let num_cards = data.length;
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
 
     console.log(path.join(__dirname, '..', 'public'));
