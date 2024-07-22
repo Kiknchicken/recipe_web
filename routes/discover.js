@@ -39,6 +39,7 @@ function recipe() {
         if (err) throw err;
             for (let row of res.rows) {
                 data.push(row);
+                console.log(row);
             }
         client.end();
     });
