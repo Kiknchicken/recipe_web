@@ -41,7 +41,6 @@ function recipe() {
                 result.push(row);
                 console.log("first data", result[0]);
             }
-            console.log(err);
         client.end();
     });
 
