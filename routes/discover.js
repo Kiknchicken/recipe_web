@@ -44,6 +44,7 @@ function recipe() {
         client.end();
     });
 
+    console.log("data in function");
     console.log(data);
     
     return data;
