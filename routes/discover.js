@@ -7,9 +7,6 @@ const { Client } = require('pg');
 //Setting up statics
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
-//Recipe Cards
-const num_cards = 5;
-
 //Recipes
 let fried_rice = [
     "1",
@@ -47,10 +44,12 @@ client.query('SELECT * FROM recipes', (err, res) => {
     client.end();
 });
 
+let num_cards = data.length;
+
 //Routes
 router.get("/", (req, res) => {
     console.log("discover");
-    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data, id: id});
+    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
     console.log(path.join(__dirname, '..', 'public'));
 });
 
