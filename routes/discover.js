@@ -18,7 +18,6 @@ let fried_rice = [
     "https://www.youtube.com/embed/Dk0axPbD2pc?si=jLvz_0OgrrVDpCxZ",
     "30",
     "2",
-    "Easy",
     "Delicious and easy recipe for a chill family dinner",
     "2 Eggs, 2 Boneless Chicken Thighs, 1 Cup Chopped Ham, 1/2 Cup Shitake Mushrooms Chopped, 2 Cloves of Garlic Crushed, 1/2 Pound of Frozen Peas, 3 Tbsp Soy Sauce, 3 Tbsp Oyster Sauce, Sesame Seeds, 4 1/2 Cups of Cooked Rice (Prefered Cold), Salt, Vegtable Oil, 1 Tbsp Butter",
     "Pre heat pan to medium heat and add vegtable oil, Beat eggs and while pan is heating and add them when pan reaches temprature, Once eggs are semi cooked, remove them from heat and add the rest of the butter, Remove eggs, add more oil to pan and add protien of choice, Once protien is semi cooked, remove from pan, clean it and add more oil, Throw in Shiitake mushrooms to let them brown a little and then throw in peas and chopped ham, Saute the ingredients until the choppped ham is a little brown, add your left over rice and then the soy and oyster sauces, Turn to high heat and mix ingredients in pan until well mix, Incorporate your protien and eggs to the stir fry, While mixing, add in some vegtable oil, scallions and some sesame seeds, Turn to low heat and add butter to add richness to stir fry"
@@ -36,10 +35,14 @@ const client = new Client({
 
 client.connect();
 
-client.query('SELECT NOW()', (err, res) => {
+
+//Query
+query_result = [];
+
+client.query('SELECT * FROM recipes', (err, res) => {
     if (err) throw err;
         for (let row of res.rows) {
-            console.log(JSON.stringify(row));
+            query_result.push(JSON.stringify(row));
         }
     client.end();
 });
@@ -49,6 +52,7 @@ router.get("/", (req, res) => {
     console.log("discover");
     res.render("discover", { name: 'Guest', num_cards: num_cards, fried_rice: fried_rice, id: id});
     console.log(path.join(__dirname, '..', 'public'));
+    console.log(query_result);
 });
 
 router.post("/", (req, res) => {
