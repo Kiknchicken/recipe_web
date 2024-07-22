@@ -41,7 +41,7 @@ client.query('SELECT * FROM recipes', (err, res) => {
     client.end();
 });
 
-let num_cards = data.length;
+let num_cards = data.length();
 
 //Routes
 router.get("/", (req, res) => {
