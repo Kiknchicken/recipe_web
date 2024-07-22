@@ -33,21 +33,23 @@ const client = new Client({
 client.connect();
 
 
-//Query
-data = [];
 
-client.query('SELECT * FROM recipes', (err, res) => {
-    if (err) throw err;
-        for (let row of res.rows) {
-            data.push(row);
-        }
-    client.end();
-});
 
 let num_cards = data.length;
 
 //Routes
 router.get("/", (req, res) => {
+    //Query
+    data = [];
+
+    client.query('SELECT * FROM recipes', (err, res) => {
+        if (err) throw err;
+            for (let row of res.rows) {
+                data.push(row);
+            }
+        client.end();
+    });
+    
     console.log("discover");
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
     console.log(path.join(__dirname, '..', 'public'));
