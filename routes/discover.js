@@ -41,10 +41,10 @@ function recipe() {
                 data.push(row);
                 console.log(data[0]);
             }
-        client.end();
     });
 
     console.log(data);
+    client.end();
     return data;
 }
 
@@ -58,7 +58,6 @@ router.get("/", (req, res) => {
 
     console.log(path.join(__dirname, '..', 'public'));
     console.log(data[0]);
-    console.log(data[1]);
     console.log(num_cards);
 });
 
