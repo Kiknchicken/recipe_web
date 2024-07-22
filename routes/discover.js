@@ -51,6 +51,7 @@ router.get("/", (req, res) => {
     console.log("discover");
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
     console.log(path.join(__dirname, '..', 'public'));
+    console.log(data);
 });
 
 router.post("/", (req, res) => {
