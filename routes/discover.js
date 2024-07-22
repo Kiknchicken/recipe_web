@@ -37,7 +37,7 @@ client.connect();
 
 
 //Query
-query_result = [];
+data = [];
 
 client.query('SELECT * FROM recipes', (err, res) => {
     if (err) throw err;
@@ -50,7 +50,7 @@ client.query('SELECT * FROM recipes', (err, res) => {
 //Routes
 router.get("/", (req, res) => {
     console.log("discover");
-    res.render("discover", { name: 'Guest', num_cards: num_cards, query_result: data, id: id});
+    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data, id: id});
     console.log(path.join(__dirname, '..', 'public'));
     console.log(query_result);
 });
