@@ -35,13 +35,13 @@ function recipe() {
     //Query
     data = [];
 
-    client.query("SELECT * FROM recipes WHERE id = '1'", (err, res) => {
-        if (err) throw err;
-            for (let row of res.rows) {
-                data.push(row);
-                console.log(data[0]);
-            }
-    });
+    let result = client.query("SELECT * FROM recipes WHERE id = '1'");
+
+
+    for (let row of result) {
+        data.push(row);
+        console.log(data[0]);
+    }
 
     console.log(data);
     client.end();
