@@ -42,7 +42,8 @@ data = [];
 client.query('SELECT * FROM recipes', (err, res) => {
     if (err) throw err;
         for (let row of res.rows) {
-            data.push(row.values());
+            data.push(rows);
+            console.log(typeof rows);
         }
     client.end();
 });
