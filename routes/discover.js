@@ -43,6 +43,7 @@ function recipe() {
         client.end();
     });
 
+    console.log(data);
     return data;
 }
 
