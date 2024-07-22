@@ -24,10 +24,12 @@ app.use(express.urlencoded({ extended: true }));
 const userRoute = require('./routes/userLanding');
 const userDiscover = require('./routes/discover');
 const recipe = require('./routes/recipe');
+const userRecipes = require('./routes/userRecipes');
 
 app.use("/home", userRoute);
 app.use("/discover", userDiscover);
 app.use("/recipe", recipe);
+app.use("/userRecipes", userRecipes);
 
 //Setting up statics
 app.use(express.static(path.join(__dirname, 'public')));
