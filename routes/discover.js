@@ -35,7 +35,7 @@ function recipe() {
     //Query
     data = [];
 
-    client.query('SELECT * FROM recipes', (err, res) => {
+    client.query('SELECT * FROM recipes WHERE id<"4"', (err, res) => {
         if (err) throw err;
             for (let row of res.rows) {
                 data.push(row);
