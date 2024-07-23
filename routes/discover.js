@@ -45,10 +45,10 @@ async function recipe() {
 }
 
 //Routes
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
     console.log("discover");
 
-    var data = recipe();
+    var data = await recipe();
     var num_cards = data.length;
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
 
