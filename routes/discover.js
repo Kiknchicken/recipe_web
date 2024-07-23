@@ -33,12 +33,12 @@ function recipe() {
     client.connect();
 
     //Query
-    var result = "";
+    var result = [];
 
     client.query("SELECT * FROM recipes WHERE id = '1'", (err, res) => {
         if (err) throw err;
             for (let row of res.rows) {
-                result = row;
+                result.push(row);
                 console.log("first data", result[0]);
             }
         client.end();
