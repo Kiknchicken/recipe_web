@@ -43,8 +43,9 @@
                     /* Init elemets of card */
                     var card = document.createElement('div').setAttribute("class", "card");
                     var card_container_info = document.createElement('div').setAttribute("class", "card_container_info");
-                    var card_img = document.createElement('img').setAttribute("src", data[i]['img']);
-                    
+                    var card_img = document.createElement('img');
+                    card_img.setAttribute("src", data[i]['img']);
+                    card_img.setAttribute("class", "card_img");
                     var p = document.createElement('p').appendChild(document.createTextNode(data[i]['description']));
 
                     var card_info = document.createElement('ul').setAttribute("class", "card_info");
