@@ -33,7 +33,7 @@ function recipe() {
     client.connect();
 
     //Query
-    const result = "";
+    var result = "";
 
     client.query("SELECT * FROM recipes WHERE id = '1'", (err, res) => {
         if (err) throw err;
