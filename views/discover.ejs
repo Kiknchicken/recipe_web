@@ -33,7 +33,7 @@
             <h1>Welcome <%= name %></h1>
         </div>
 
-        <div id="card_conteiner">
+        <div id="card_container">
             <script>
                 /* Init vars */
                 var data = "<%= data %>";
@@ -41,14 +41,18 @@
 
                 for (let i = 0; i < num_cards; i++) {
                     /* Init elemets of card */
-                    var card = document.createElement('div').setAttribute("class", "card");
-                    var card_container_info = document.createElement('div').setAttribute("class", "card_container_info");
+                    var card = document.createElement('div');
+                    card.setAttribute("class", "card");
+                    var card_container_info = document.createElement('div')
+                    card_container_info.setAttribute("class", "card_container_info");
                     var card_img = document.createElement('img');
                     card_img.setAttribute("src", data[i]['img']);
                     card_img.setAttribute("class", "card_img");
-                    var p = document.createElement('p').appendChild(document.createTextNode(data[i]['description']));
+                    var p = document.createElement('p');
+                    p.appendChild(document.createTextNode(data[i]['description']));
 
-                    var card_info = document.createElement('ul').setAttribute("class", "card_info");
+                    var card_info = document.createElement('ul');
+                    card_info.setAttribute("class", "card_info");
                     var li;
 
                     var form = document.createElement('form')
@@ -57,10 +61,10 @@
                     var input;
 
                     /* Create children for form and ul */
-                    li = document.createElement('li')
+                    li = document.createElement('li');
                     li.appendChild(document.createTextNode(data[i]['time'] + "min"));
                     card_info.appendChild(li);
-                    li = document.createElement('li')
+                    li = document.createElement('li');
                     li.appendChild(document.createTextNode("Servings: " + data[i]['serving']));
                     card_info.appendChild(li);
 
