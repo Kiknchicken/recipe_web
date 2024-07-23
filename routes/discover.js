@@ -21,7 +21,7 @@ let fried_rice = [
 ];
 
 //Functions
-function recipe() {
+async function recipe() {
     //Connection to db
     const client = new Client({
         connectionString: process.env.DATABASE_URL,
@@ -35,7 +35,7 @@ function recipe() {
     //Query
     var data = [];
 
-    var result = client.query("SELECT * FROM recipes WHERE id = '1'");
+    var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
     data.push(result.rows);
 
     console.log("data in function");
