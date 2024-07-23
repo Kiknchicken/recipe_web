@@ -57,9 +57,11 @@
                     var input;
 
                     /* Create children for form and ul */
-                    li = document.createElement('li').appendChild(document.createTextNode(data[i]['time'] + "min"));
+                    li = document.createElement('li')
+                    li.appendChild(document.createTextNode(data[i]['time'] + "min"));
                     ul.appendChild(li);
-                    li = document.createElement('li').appendChild(document.createTextNode("Servings: " + data[i]['serving']));
+                    li = document.createElement('li')
+                    li.appendChild(document.createTextNode("Servings: " + data[i]['serving']));
                     ul.appendChild(li);
 
                     input = document.createElement('input');
