@@ -1,15 +1,15 @@
-<%= <div class="card"> %>
+<div class="card">
     <img src=<%= data[i]['img'] %> class="card_img">
-    <%= <div class= "card_container_info"> %>
-        <h2 class="card_title"><%=  data[i]['title'] %></h2>
-    <%= <ul class="card_info"> %>
+    <div class= "card_container_info">
+        <h2 class="card_title"><%= data[i]['title'] %></h2>
+        <ul class="card_info">
             <li><%= data[i]['time'] %> min</li>
             <li>Serving: <%= data[i]['serving'] %></li>
-    <%= </ul> %>
-    <%= <form action="/recipe" method="POST"> %>
+        </ul>
+        <form action="/recipe" method="POST">
             <input class="card_id" type="id" name="id" value=<%= data[i]['id'] %>>
-    <%=     <input class="card_link" type="submit" value="View Recipe"> %>
-    <%= </form> %>
+            <input class="card_link" type="submit" value="View Recipe">
+        </form>
         <p><%= data[i]['description'] %></p>
-    <%= </div> %>
-<%= </div> %>
+    </div>
+</div>
