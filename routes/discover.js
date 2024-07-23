@@ -39,7 +39,7 @@ function recipe() {
         if (err) throw err;
             for (let row of res.rows) {
                 result.push(row);
-                console.log("first data", result[0]);
+                console.log("first data", result);
             }
         client.end();
     });
