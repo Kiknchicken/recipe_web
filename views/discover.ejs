@@ -51,7 +51,8 @@
                     var card_info = document.createElement('ul').setAttribute("class", "card_info");
                     var li;
 
-                    var form = document.createElement('form').setAttribute("action", "/recipe");
+                    var form = document.createElement('form')
+                    form.setAttribute("action", "/recipe");
                     form.setAttribute("method", "POST");
                     var input;
 
@@ -61,11 +62,13 @@
                     li = document.createElement('li').appendChild(document.createTextNode("Servings: " + data[i]['serving']));
                     ul.appendChild(li);
 
-                    input = document.createElement('input').setAttribute("class", "card_id");
+                    input = document.createElement('input');
+                    input.setAttribute("class", "card_id");
                     input.setAttribute("type", "id").setAttribute("name", "id");
                     input.setAttribute("value", data[i]['id']);
                     form.appendChild(input);
-                    input = document.createElement('input').setAttribute("class", "card_link");
+                    input = document.createElement('input');
+                    input.setAttribute("class", "card_link");
                     input.setAttribute("type", "submit");
                     input.setAttribute("value", "View Recipe");
                     form.appendChild(input);
