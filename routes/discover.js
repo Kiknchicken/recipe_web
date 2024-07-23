@@ -20,8 +20,10 @@ let fried_rice = [
     "Pre heat pan to medium heat and add vegtable oil, Beat eggs and while pan is heating and add them when pan reaches temprature, Once eggs are semi cooked, remove them from heat and add the rest of the butter, Remove eggs, add more oil to pan and add protien of choice, Once protien is semi cooked, remove from pan, clean it and add more oil, Throw in Shiitake mushrooms to let them brown a little and then throw in peas and chopped ham, Saute the ingredients until the choppped ham is a little brown, add your left over rice and then the soy and oyster sauces, Turn to high heat and mix ingredients in pan until well mix, Incorporate your protien and eggs to the stir fry, While mixing, add in some vegtable oil, scallions and some sesame seeds, Turn to low heat and add butter to add richness to stir fry"
 ];
 
-//Functions
-function recipe() {
+//Routes
+router.get("/", (req, res) => {
+    console.log("discover");
+
     //Connection to db
     const client = new Client({
         connectionString: process.env.DATABASE_URL,
@@ -33,28 +35,20 @@ function recipe() {
     client.connect();
 
     //Query
-    var result = [];
+    var data = [];
 
     client.query("SELECT * FROM recipes WHERE id = '1'", (err, res) => {
         if (err) throw err;
             for (let row of res.rows) {
-                result.push(row);
-                console.log("first data", result);
+                data.push(row);
+                console.log("first data", data);
             }
         client.end();
     });
 
     console.log("data in function");
-    console.log(result);
-    
-    return result;
-}
+    console.log(data);
 
-//Routes
-router.get("/", (req, res) => {
-    console.log("discover");
-
-    let data = recipe();
     let num_cards = data.length;
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
 
