@@ -37,9 +37,6 @@ async function recipe() {
 
     var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
     data.push(result.rows);
-
-    console.log("data in function");
-    console.log(data);
     
     return data;
 }
@@ -53,8 +50,6 @@ router.get("/", async (req, res) => {
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
 
     console.log(path.join(__dirname, '..', 'public'));
-    console.log(data[0]);
-    console.log(num_cards);
 });
 
 router.post("/", (req, res) => {

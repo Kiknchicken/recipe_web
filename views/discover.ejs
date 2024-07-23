@@ -36,9 +36,15 @@
         <div id="card_container">
             <script>
                 /* Init vars */
-                var data = "<%= for (let row of data) %>";
                 var num_cards = "<%= num_cards %>";
+                var data = [];
 
+                for (let row of "<%= data %>") {
+                    data.push(row);
+                };
+                
+                console.log(data[0]);
+                
                 for (let i = 0; i < num_cards; i++) {
                     /* Init elemets of card */
                     var card = document.createElement('div');
