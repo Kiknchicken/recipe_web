@@ -36,7 +36,7 @@
         <div id="card_container">
             <script>
                 /* Init vars */
-                var data = "<%= data %>";
+                var data = "<%= for (let row of data) %>";
                 var num_cards = "<%= num_cards %>";
 
                 for (let i = 0; i < num_cards; i++) {
