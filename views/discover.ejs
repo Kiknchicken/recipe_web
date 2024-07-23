@@ -39,12 +39,13 @@
                 var num_cards = "<%= num_cards %>";
                 var data = [];
 
-                for (let row of "<%= data %>") {
-                    data.push(row);
-                };
-                
-                console.log(data[0]);
-                
+                console.log("<%= data %>")
+
+
+                // for (let row of "<%= data %>") {
+                //     data.push(row);
+                // };
+
                 for (let i = 0; i < num_cards; i++) {
                     /* Init elemets of card */
                     var card = document.createElement('div');
