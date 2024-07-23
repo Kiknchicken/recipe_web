@@ -39,27 +39,30 @@
                 var data = "<%= data %>";
                 var num_cards = "<%= num_cards %>";
 
-                /* Init elemets of card */
-                var card = document.createElement('div').setAttribute("class", "card");
-                var card_container_info = document.createElement('div').setAttribute("class", "card_container_info");
-                var card_img = document.createElement('img').setAttribute("src", data[i]['img']).setAttribute("class", "card_img");
-                var p = document.createElement('p').appendChild(document.createTextNode(data[i]['description']));
+                for (let i = 0; i < num_cards; i++) {
+                    /* Init elemets of card */
+                    var card = document.createElement('div').setAttribute("class", "card");
+                    var card_container_info = document.createElement('div').setAttribute("class", "card_container_info");
+                    var card_img = document.createElement('img').setAttribute("src", data[i]['img']).setAttribute("class", "card_img");
+                    var p = document.createElement('p').appendChild(document.createTextNode(data[i]['description']));
 
-                var card_info = document.createElement('ul').setAttribute("class", "card_info");
-                var li;
+                    var card_info = document.createElement('ul').setAttribute("class", "card_info");
+                    var li;
 
-                var form = document.createElement('form').setAttribute("action", "/recipe").setAttribute("method", "POST");
-                var input;
+                    var form = document.createElement('form').setAttribute("action", "/recipe").setAttribute("method", "POST");
+                    var input;
 
-                /* Create children for form and ul */
-                li = document.createElement('li').appendChild(document.createTextNode(data[i]['time'] + "min"));
-                ul.appendChild(li);
-                li = document.createElement('li').appendChild(document.createTextNode("Servings: " + data[i]['serving']));
-                ul.appendChild(li);
+                    /* Create children for form and ul */
+                    li = document.createElement('li').appendChild(document.createTextNode(data[i]['time'] + "min"));
+                    ul.appendChild(li);
+                    li = document.createElement('li').appendChild(document.createTextNode("Servings: " + data[i]['serving']));
+                    ul.appendChild(li);
 
-                input = document.createElement('input').setAttribute("class", "card_id").setAttribute("type", "id").setAttribute("name", "id").setAttribute("value", data[i]['id']);
-                form.appendChild(input);
-                input = document.createElement('input').setAttribute("class", "card_link").setAttribute("type", "submit").setAttribute("value", "View Recipe");
+                    input = document.createElement('input').setAttribute("class", "card_id").setAttribute("type", "id").setAttribute("name", "id").setAttribute("value", data[i]['id']);
+                    form.appendChild(input);
+                    input = document.createElement('input').setAttribute("class", "card_link").setAttribute("type", "submit").setAttribute("value", "View Recipe");
+                    form.appendChild(input);
+                }
             </script>
         </div>
     </div>
