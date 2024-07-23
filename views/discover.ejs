@@ -59,10 +59,10 @@
                     /* Create children for form and ul */
                     li = document.createElement('li')
                     li.appendChild(document.createTextNode(data[i]['time'] + "min"));
-                    ul.appendChild(li);
+                    card_info.appendChild(li);
                     li = document.createElement('li')
                     li.appendChild(document.createTextNode("Servings: " + data[i]['serving']));
-                    ul.appendChild(li);
+                    card_info.appendChild(li);
 
                     input = document.createElement('input');
                     input.setAttribute("class", "card_id");
