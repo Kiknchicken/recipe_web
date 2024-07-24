@@ -33,6 +33,7 @@ async function recipe() {
     client.connect();
 
     const query = {
+        text: "SELECT * FROM recipes WHERE id = '1'",
         rowMode: 'array'
     };
 
@@ -40,7 +41,7 @@ async function recipe() {
     var data = [];
     var headers = ['id', 'title', 'img', 'video', 'time', 'serving', 'description', 'ingredients', 'instructions'];
 
-    var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
+    var result = await client.query(query);
 
     for (let i = 0; i < result.rows.length; i++) {
         console.log(result.rows[i]);
