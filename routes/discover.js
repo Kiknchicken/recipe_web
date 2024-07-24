@@ -34,11 +34,12 @@ async function recipe() {
 
     //Query
     var data = [];
+    var headers = ['id', 'title', 'img', 'video', 'time', 'serving', 'description', 'ingredients', 'instructions'];
 
     var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
 
     for (let i = 0; i < result.rows.length; i++) {
-        console.log(result.rows[i]);
+        console.log(result.rows[i]['id']);
         // data[i] = result.rows[i].values;
     }
     console.log(data[0]);
