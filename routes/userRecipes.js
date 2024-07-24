@@ -2,13 +2,48 @@
 const express = require('express');
 const path = require("path");
 const router = express.Router();
+const { Client } = require('pg');
 
 //Setting up statics
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
-router.get("/", (req, res) => {
+//Functions
+async function recipe() {
+    //Connection to db
+    const client = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+        rejectUnauthorized: false
+        }
+    });
+
+    client.connect();
+
+    const query = {
+        text: "SELECT * FROM recipes",
+        rowMode: 'array'
+    };
+
+    //Query
+    var data = [];
+
+    var result = await client.query(query);
+
+    for (let i = 0; i < result.rows.length; i++) {
+        data.push(result.rows[i]);
+    }
+    
+    return data;
+}
+
+router.get("/", async (req, res) => {
     console.log("userRecipes");
-    res.render("userRecipes");
+
+    var data = await getRecipe();
+    var num_cards = data.length;
+
+    res.render("userRecipes", { name: 'Guest', num_cards: num_cards, data: data });
+
     console.log(path.join(__dirname, '..', 'public'));
 });
 
