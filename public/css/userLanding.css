@@ -129,3 +129,7 @@ footer {
     padding-left: 50px;
     width: 100%;
 }
+
+.grid_text p{
+    line-height: 1.6;
+}
