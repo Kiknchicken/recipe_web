@@ -20,7 +20,7 @@ async function getRecipe(id) {
     client.connect();
 
     const query = {
-        text: "SELECT * FROM recipes WHERE id=$1::text",
+        text: "SELECT * FROM recipes WHERE id=$1::int",
         values: [id],
         rowMode: 'array'
     };
@@ -44,7 +44,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    var id = req.body.id.toString();
+    var id = req.body.id;
     console.log(id);
 
     //Grab recipe from db
