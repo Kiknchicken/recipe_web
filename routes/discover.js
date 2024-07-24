@@ -44,7 +44,7 @@ async function recipe() {
     var result = await client.query(query);
 
     for (let i = 0; i < result.rows.length; i++) {
-        console.log(result.rows[i]);
+        data.push(result.rows[i]);
         // data[i] = result.rows[i].values;
     }
     console.log(data[0]);
