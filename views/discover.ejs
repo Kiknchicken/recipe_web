@@ -35,11 +35,11 @@
 
         <div id="card_container">
             <% for (let i = 0; i < num_cards; i++) {%>
-                <div class="card" id= <%= i %>>
-                    <%- include ('partials/recipe_card.ejs') %>
-                </div>
-                
+                <%- include ('partials/recipe_card.ejs') %>
             <% } %>
+            <script>
+                var img = document.getElementByClassName("card_img").setAttribute("src", "<%= data[0][2] %>");
+            </script>
         </div>
 
         <div id="card_container">
