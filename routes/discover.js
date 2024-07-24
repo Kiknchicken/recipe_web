@@ -45,9 +45,7 @@ async function recipe() {
 
     for (let i = 0; i < result.rows.length; i++) {
         data.push(result.rows[i]);
-        // data[i] = result.rows[i].values;
     }
-    console.log(data[0]);
     
     return data;
 }
@@ -61,7 +59,6 @@ router.get("/", async (req, res) => {
     res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
 
     console.log(path.join(__dirname, '..', 'public'));
-    console.log(typeof data[0]);
 });
 
 router.post("/", (req, res) => {
