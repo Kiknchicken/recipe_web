@@ -35,7 +35,7 @@
 
         <div class="card_container">
             <% for (let i = 0; i < num_cards; i++) { %>
-                <h1><%= data[i]['img'] %></h1>
+                <h1><% let result[i] = data[i].values %></h1>
             <% } %>
         </div>
 
