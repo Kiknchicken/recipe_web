@@ -35,8 +35,10 @@
 
         <div id="card_container">
             <% for (let i = 0; i < num_cards; i++) {%>
-                <% let index = i %>
-                <%- include ('partials/recipe_card.ejs') %>
+                <div class="card" id= <%= i %>>
+                    <%- include ('partials/recipe_card.ejs') %>
+                </div>
+                
             <% } %>
         </div>
 
