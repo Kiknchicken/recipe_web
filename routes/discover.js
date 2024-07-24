@@ -36,11 +36,16 @@ async function recipe() {
     var data = [];
 
     var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
+    var len = result.rows.length;
+
+    console.log(len);
 
     for (let i; i < result.rows.length; i++) {
         console.log("hello");
     }
     data.push(result.rows);
+
+    console.log()
     
     return data;
 }
