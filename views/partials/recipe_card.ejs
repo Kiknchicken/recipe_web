@@ -1,20 +1,15 @@
 <div class="card">
-    <img src=<%= data[i]['img'] %> class="card_img">
+    <img src=<%= data[i][0] %> class="card_img">
     <div class= "card_container_info">
-        <h2 class="card_title"><%= data[i]['title'] %></h2>
+        <h2 class="card_title"><%= data[i][0] %></h2>
         <ul class="card_info">
-            <li><%= data[i]['time'] %> min</li>
-            <li>Serving: <%= data[i]['serving'] %></li>
+            <li><%= data[i][0] %> min</li>
+            <li>Serving: <%= data[i][0] %></li>
         </ul>
         <form action="/recipe" method="POST">
-            <input class="card_id" type="id" name="id" value=<%= data[i]['id'] %>>
+            <input class="card_id" type="id" name="id" value=<%= data[i][0] %>>
             <input class="card_link" type="submit" value="View Recipe">
         </form>
-        <p><%= data[i]['description'] %></p>
+        <p><%= data[i][0] %></p>
     </div>
 </div>
-
-<script>
-    const card = document.createElement('div');
-    const card_container_info = document.createElement('div');
-</script>

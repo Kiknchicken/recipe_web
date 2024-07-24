@@ -35,7 +35,7 @@
 
         <div id="card_container">
             <% for (let i = 0; i < num_cards; i++) {%>
-            <h1><%= data[i] %></h1>
+            <%- include recipe_card.ejs %>
             <% } %>
         </div>
 
