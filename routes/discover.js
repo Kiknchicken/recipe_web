@@ -33,13 +33,12 @@ async function recipe() {
     client.connect();
 
     const query = {
-        text: "SELECT * FROM recipes WHERE id = '1'",
+        text: "SELECT * FROM recipes",
         rowMode: 'array'
     };
 
     //Query
     var data = [];
-    var headers = ['id', 'title', 'img', 'video', 'time', 'serving', 'description', 'ingredients', 'instructions'];
 
     var result = await client.query(query);
 
