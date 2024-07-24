@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/recipe.css">
+
+    <title>Recipes</title>
 </head>
 <body>
-    <h1>Fried Rice</h1>
+    <header class="topnav_background" id="navbar">
+        <div class="topnav">
+            <a href="/home" style="border-width: 0px; padding: 0px;";><img src="images/UMAI-ICON-FINAL-02.svg" class="topnav_img"></a>
+            <div class="topnav_links">
+                <a>Add Recipe</a>
+                <a href="/discover">Discover</a>
+                <a href="/userRecipes">Your Recipes</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="container">
+        <div id="container_left">
+            <img src="images/fried_rice.jpg">
+            <h3>Servings: 1</h3>
+            <h2>Ingredients</h2>
+            <div id="ingredients_wrapper">
+                <% var ingredients = data[0][7].split(",") %>
+                <ul>
+                    <% for (let i = 0; i < ingredients.length; i++) {
+                    <li><%= ingredients[i] %></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <div id="container_right">
+            <h1>Fried Rice</h1>
+            <iframe src="https://www.youtube.com/embed/Dk0axPbD2pc?si=jLvz_0OgrrVDpCxZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h2>Instructions</h2>
+            <div id="instructions_wrapper">
+                <ul>
+                    <li>Pre heat pan to medium heat and add vegtable oil</li>
+                    <li>Beat eggs and while pan is heating and add them when pan reaches temprature</li>
+                    <li>Once eggs are semi cooked, remove them from heat and add the rest of the butter</li>
+                    <li>Remove eggs, add more oil to pan and add protien of choice</li>
+                    <li>Once protien is semi cooked, remove from pan, clean it and add more oil</li>
+                    <li>Throw in Shiitake mushrooms to let them brown a little and then throw in peas and chopped ham</li>
+                    <li>Saute the ingredients until the choppped ham is a little brown, add your left over rice and then the soy and oyster sauces</li>
+                    <li>Turn to high heat and mix ingredients in pan until well mix</li>
+                    <li>Incorporate your protien and eggs to the stir fry</li>
+                    <li>While mixing, add in some vegtable oil, scallions and some sesame seeds</li>
+                    <li>Turn to low heat and add butter to add richness to stir fry</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
