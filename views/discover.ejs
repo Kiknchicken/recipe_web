@@ -35,7 +35,7 @@
 
         <div id="card_container">
             <% for (let i = 0; i < num_cards; i++) {%>
-            <%- include recipe_card.ejs %>
+            <%- include ('partials/recipe_card.ejs') %>
             <% } %>
         </div>
 
@@ -45,7 +45,7 @@
                 var num_cards = "<%= num_cards %>";
                 
                 console.log("data stuiff")
-                console.log('<%= data[0]["img"] %>');
+                console.log('');
                 console.log(num_cards);
 
                 for (let i = 0; i < num_cards; i++) {
