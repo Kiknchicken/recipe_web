@@ -36,31 +36,27 @@ async function getRecipe() {
     return data;
 }
 
-//Routes
 router.get("/", async (req, res) => {
-    console.log("discover");
+    console.log("userRecipes");
 
     var data = await getRecipe();
     var num_cards = data.length;
-    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
+
+    res.render("userRecipes", { name: 'Guest', num_cards: num_cards, data: data });
 
     console.log(path.join(__dirname, '..', 'public'));
 });
 
 router.post("/", (req, res) => {
-    res.render("discover");
-
-    const data = req.body;
-
-    console.log("KACHOW");
+    res.render("userRecipes");
 });
 
 router.put("/", (req, res) => {
-    console.log("discover");
+    console.log("userRecipes");
 });
 
 router.delete("/", (req, res) => {
-    console.log("discover");
+    console.log("userRecipes");
 });
 
 

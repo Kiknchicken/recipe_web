@@ -16,15 +16,20 @@ app.listen(PORT, (error) =>{
     }
 }
 );
+//Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Routes
 const userRoute = require('./routes/userLanding');
 const userDiscover = require('./routes/discover');
 const recipe = require('./routes/recipe');
+const userRecipes = require('./routes/userRecipes');
 
 app.use("/home", userRoute);
 app.use("/discover", userDiscover);
 app.use("/recipe", recipe);
+app.use("/userRecipes", userRecipes);
 
 //Setting up statics
 app.use(express.static(path.join(__dirname, 'public')));
