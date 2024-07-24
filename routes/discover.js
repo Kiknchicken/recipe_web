@@ -39,7 +39,7 @@ async function recipe() {
 
     for (let i = 0; i < result.rows.length; i++) {
         console.log("hello");
-        data[i].push(result.rows[i].values);
+        data[i] = result.rows[i].values;
     }
     console.log(data[0]);
     
