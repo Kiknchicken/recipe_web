@@ -32,14 +32,18 @@ async function recipe() {
 
     client.connect();
 
+    const query = {
+        rowMode: 'array'
+    };
+
     //Query
     var data = [];
     var headers = ['id', 'title', 'img', 'video', 'time', 'serving', 'description', 'ingredients', 'instructions'];
 
-    var result = await client.query('array',"SELECT * FROM recipes WHERE id = '1'");
+    var result = await client.query("SELECT * FROM recipes WHERE id = '1'");
 
     for (let i = 0; i < result.rows.length; i++) {
-        console.log(result.rows[i][i]);
+        console.log(result.rows[i]);
         // data[i] = result.rows[i].values;
     }
     console.log(data[0]);
