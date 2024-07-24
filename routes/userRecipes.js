@@ -8,7 +8,7 @@ const { Client } = require('pg');
 router.use(express.static(path.join(__dirname, '..', 'public')));
 
 //Functions
-async function recipe() {
+async function getRecipe() {
     //Connection to db
     const client = new Client({
         connectionString: process.env.DATABASE_URL,
