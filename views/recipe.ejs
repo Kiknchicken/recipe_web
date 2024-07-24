@@ -34,7 +34,7 @@
             <h3>Servings: 1</h3>
             <h2>Ingredients</h2>
             <div id="ingredients_wrapper">
-                <% var ingredients = data[0][7].split(",") %>
+                <% var ingredients = data[0][7].split(".") %>
                 <ul>
                     <% for (let i = 0; i < ingredients.length; i++) { %>
                     <li><%= ingredients[i] %></li>
