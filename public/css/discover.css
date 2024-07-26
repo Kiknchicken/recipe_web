@@ -1,3 +1,9 @@
+/* Colors */
+:root {
+    --dark_cyan_blue: #2CA4AB;
+    --smokey_white: #F1F1F1;
+}
+
 /* General */
 p {
     margin-top: 20px;
@@ -14,9 +20,9 @@ li {
 
 #discover_container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    margin: 100px 250px 50px 250px;
+    margin: 90px 250px 50px 300px;
 }
 
 /* Recipe Cards */
@@ -79,3 +85,28 @@ li {
     position: absolute;
 }
 
+.minimize {
+    display: none;
+}
+
+/* Sidebar */
+#sidebar_container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 855px;
+    position: fixed;
+    left: 0px;
+    background-color: var(--smokey_white);
+    padding: 50px 25px 25px 60px;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.filters input{
+    margin-right: 10px;
+}
