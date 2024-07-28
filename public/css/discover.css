@@ -22,7 +22,7 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 90px 250px 50px 300px;
+    margin: 90px 250px 50px 250px;
 }
 
 /* Recipe Cards */
