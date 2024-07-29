@@ -51,29 +51,31 @@
             </div>
         </form>
 
-        <div id="header">
-            <h1>Welcome <%= name %></h1>
-        </div>
+        <div id="content_container">
+            <div id="header">
+                <h1>Welcome <%= name %></h1>
+            </div>
 
-        <div id="card_container">
-            <% for (let i = 0; i < num_cards; i++) {%>
-                <div class="card" data-cuisine=<%= data[i][9] %> data-vegetarian=<%= data[i][10] %>>
-                    <img src=<%= data[i][2] %> class="card_img">
-                    <div class= "card_container_info">
-                        <h2 class="card_title"><%= data[i][1] %></h2>
-                        <ul class="card_info">
-                            <li>Servings: <%= data[i][5] %></li>
-                            <li>Time: <%= data[i][4] %></li>
-                        </ul>
-                        <form action="/recipe" method="POST">
-                            <input class="card_id" type="id" name="id" value=<%= data[i][0] %>>
-                            <input class="card_link" type="submit" value="View Recipe">
-                        </form>
-                        <p><%= data[i][6] %></p>
+            <div id="card_container">
+                <% for (let i = 0; i < num_cards; i++) {%>
+                    <div class="card" data-cuisine=<%= data[i][9] %> data-vegetarian=<%= data[i][10] %>>
+                        <img src=<%= data[i][2] %> class="card_img">
+                        <div class= "card_container_info">
+                            <h2 class="card_title"><%= data[i][1] %></h2>
+                            <ul class="card_info">
+                                <li>Servings: <%= data[i][5] %></li>
+                                <li>Time: <%= data[i][4] %></li>
+                            </ul>
+                            <form action="/recipe" method="POST">
+                                <input class="card_id" type="id" name="id" value=<%= data[i][0] %>>
+                                <input class="card_link" type="submit" value="View Recipe">
+                            </form>
+                            <p><%= data[i][6] %></p>
+                        </div>
                     </div>
-                </div>
-            <% } %>
-        </div>
+                <% } %>
+            </div>
+        </div>        
     </div>
     <script src="js/sidebar.js"></script>
 </body>

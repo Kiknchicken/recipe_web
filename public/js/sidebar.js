@@ -7,10 +7,8 @@ function card(header, header_data) {
 
     /* Add cuisine value to dictionary */
     if (tags[header].includes(header_data)) {
-        console.log("YARR");
         tags[header].pop();
     } else {
-        console.log("NAURRR");
         tags[header].push(header_data);
     }
 
