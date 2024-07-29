@@ -4,10 +4,12 @@ function card(header, header_data) {
     /* grab headers from dict */
     let headers = Object.keys(tags);
     let filter_string = "";
+    let index;
 
     /* Add cuisine value to dictionary */
     if (tags[header].includes(header_data)) {
-        tags[header].pop();
+        index = tags[header].indexOf(header_data);
+        tags[header].splice(index, 1)
     } else {
         tags[header].push(header_data);
     }
