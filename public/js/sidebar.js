@@ -21,12 +21,12 @@ function card(header, header_data) {
         if (tags[headers[i]].length != 0) {
             filter_string += '[data-' + headers[i] + ']:not';
             for (let j = 0; j < tags[headers[i]].length; j++) {
-                filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):is';
+                filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):not';
             }
         } 
     }
 
-    filter_string = filter_string.substring(0, filter_string.length - 3);
+    filter_string = filter_string.substring(0, filter_string.length - 4);
 
     console.log(filter_string)
 
