@@ -29,12 +29,28 @@
     </header>
 
     <div id="discover_container">
-        <div id="header">
-            <h1>Discover More</h1>
-        </div>
+        <form id="sidebar_container">
+            <h2>Cuisine: </h2>
+            <div class="filters">
+                <input type="checkbox" data-tag="American" onClick="card()">
+                <label>American</label>
+            </div>
+            <div class="filters">
+                <input type="checkbox" onClick="card('chinese')">
+                <label>Chinese</label>
+            </div>
+            <div class="filters">
+                <input type="checkbox">
+                <label>Korean</label>
+            </div>
+            <div class="filters">
+                <input type="checkbox">
+                <label>Mexican</label>
+            </div>
+        </form>
 
         <div id="card_container">
-            <div class="card">
+            <div class="card" data-cuisine="chinese" id="1">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -52,7 +68,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" data-cuisine="chinese">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -60,15 +76,17 @@
                         <li>Time: 30min</li>
                         <li>Serving: 2</li>
                     </ul>
-                    <a class="card_link" href="fried_rice.html">View Recipe</a>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
                     <p>
                         blah blah blah blah blah blah blah blah blah blah
                         blah blah blah blah blah blah blah blah blah blah
                     </p>
                 </div>
-                
             </div>
-            <div class="card">
+            <div class="card" data-cuisine="american">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -76,15 +94,17 @@
                         <li>Time: 30min</li>
                         <li>Serving: 2</li>
                     </ul>
-                    <a class="card_link" href="fried_rice.html">View Recipe</a>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
                     <p>
                         blah blah blah blah blah blah blah blah blah blah
                         blah blah blah blah blah blah blah blah blah blah
                     </p>
                 </div>
-                
             </div>
-            <div class="card">
+            <div class="card" data-cuisine="american">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -92,15 +112,17 @@
                         <li>Time: 30min</li>
                         <li>Serving: 2</li>
                     </ul>
-                    <a class="card_link" href="fried_rice.html">View Recipe</a>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
                     <p>
                         blah blah blah blah blah blah blah blah blah blah
                         blah blah blah blah blah blah blah blah blah blah
                     </p>
                 </div>
-                
             </div>
-            <div class="card">
+            <div class="card" data-cuisine="american">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -108,15 +130,17 @@
                         <li>Time: 30min</li>
                         <li>Serving: 2</li>
                     </ul>
-                    <a class="card_link" href="fried_rice.html">View Recipe</a>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
                     <p>
                         blah blah blah blah blah blah blah blah blah blah
                         blah blah blah blah blah blah blah blah blah blah
                     </p>
                 </div>
-                
             </div>
-            <div class="card">
+            <div class="card" data-cuisine="american">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
@@ -124,15 +148,36 @@
                         <li>Time: 30min</li>
                         <li>Serving: 2</li>
                     </ul>
-                    <a class="card_link" href="fried_rice.html">View Recipe</a>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
                     <p>
                         blah blah blah blah blah blah blah blah blah blah
                         blah blah blah blah blah blah blah blah blah blah
                     </p>
                 </div>
-                
+            </div>
+            <div class="card" data-cuisine="american">
+                <img src="../public/images/gyudon.jpg" class="card_img">
+                <div class="card_container_info">
+                    <h2 class="card_title">Gyudon</h2>
+                    <ul class="card_info">
+                        <li>Time: 30min</li>
+                        <li>Serving: 2</li>
+                    </ul>
+                    <form action="/recipe" method="POST">
+                        <input class="card_id" type="id" name="id" value=1>
+                        <input class="card_link" type="submit" value="View Recipe">
+                    </form>
+                    <p>
+                        blah blah blah blah blah blah blah blah blah blah
+                        blah blah blah blah blah blah blah blah blah blah
+                    </p>
+                </div>
             </div>
         </div>
     </div>
+    <script src="../public/js/sidebar.js"></script>
 </body>
 </html>
