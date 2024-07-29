@@ -36,23 +36,6 @@ async function getRecipe() {
     return data;
 }
 
-async function getTags () {
-    //Connection to db
-    const client = new Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-        rejectUnauthorized: false
-        }
-    });
-
-    client.connect();
-
-    const query = {
-        text: "SELECT * FROM tags",
-        rowMode: 'array'
-    };
-}
-
 //Routes
 router.get("/", async (req, res) => {
     console.log("discover");
