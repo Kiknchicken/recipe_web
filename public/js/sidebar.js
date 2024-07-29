@@ -25,7 +25,6 @@ function card(header, header_data) {
     }
 
     filter_string = filter_string.substring(0, filter_string.length - 3);
-    filter_string += "";
 
     console.log(filter_string)
 
