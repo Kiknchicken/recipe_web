@@ -34,7 +34,7 @@
         <form id="sidebar_container">
             <h2>Cuisine</h2>
             <div class="filters">
-                <input type="checkbox" onClick="card()">
+                <input type="checkbox" onClick="card('cuisine','american')">
                 <label>American</label>
             </div>
             <div class="filters">
@@ -42,11 +42,11 @@
                 <label>Chinese</label>
             </div>
             <div class="filters">
-                <input type="checkbox">
-                <label>Korean</label>
+                <input type="checkbox" onClick="card('cuisine','japanese')">
+                <label>Japanese</label>
             </div>
             <div class="filters">
-                <input type="checkbox">
+                <input type="checkbox" onClick="card('cuisine','mexican')">
                 <label>Mexican</label>
             </div>
         </form>
