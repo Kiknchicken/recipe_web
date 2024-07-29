@@ -12,27 +12,32 @@ function card(header, header_data) {
         tags[header].push(header_data);
     }
 
+    console.log(tags)
+
     /* display recipes that are in dictionary */
     for (let i = 0; i < headers.length; i++) {
         if (tags[headers[i]].length != 0) {
             filter_string += '[data-' + headers[i] + ']:not';
             for (let j = 0; j < tags[headers[i]].length; j++) {
-                filter_string += '([data-' + headers[i] + '="' + tags[headers[j]] + '"]):or';
+                filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):is';
             }
         } 
     }
 
     filter_string = filter_string.substring(0, filter_string.length - 3);
+    filter_string += "";
 
-    // filter_string += '[data-' + headers[i] + ']:not([data-' + headers[i] + '="' + tags[headers[i]] + '"])';
+    console.log(filter_string)
+
+    // filter_string += '[data-' + headers[i] + ']:not([data-' + headers[i] + '="' + tags[headers[i]] + '"]
+
+    let cards = document.querySelectorAll(".minimize");
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].setAttribute("class", "card");
+    } 
 
     if (filter_string.length == 0) {
-        let cards = document.querySelectorAll(".minimize");
-        for (let i = 0; i < cards.length; i++) {
-            
-            cards[i].setAttribute("class", "card");
-        }
-        
+        console.log("nothing");
     } else {
         let cards = document.querySelectorAll(filter_string);
         for (let i = 0; i < cards.length; i++) {
