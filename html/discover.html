@@ -28,15 +28,17 @@
         </div>
     </header>
 
+    <div id="filterData" data-filterHeaders="cuisine,gluten"></div>
+
     <div id="discover_container">
         <form id="sidebar_container">
-            <h2>Cuisine: </h2>
+            <h2>Cuisine</h2>
             <div class="filters">
-                <input type="checkbox" data-tag="American" onClick="card()">
+                <input type="checkbox" onClick="card()">
                 <label>American</label>
             </div>
             <div class="filters">
-                <input type="checkbox" onClick="card('chinese')">
+                <input type="checkbox" onClick="card('cuisine','chinese')">
                 <label>Chinese</label>
             </div>
             <div class="filters">
@@ -68,7 +70,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card" data-cuisine="chinese">
+            <div class="card" data-cuisine="chinese" data-gluten="no">
                 <img src="../public/images/gyudon.jpg" class="card_img">
                 <div class="card_container_info">
                     <h2 class="card_title">Gyudon</h2>
