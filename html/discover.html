@@ -28,27 +28,58 @@
         </div>
     </header>
 
-    <div id="filterData" data-filterHeaders="cuisine,gluten"></div>
+    <div id="filterData" data-filterHeaders="cuisine,allergens"></div>
 
     <div id="discover_container">
+        
         <form id="sidebar_container">
-            <h2>Cuisine</h2>
-            <div class="filters">
-                <input type="checkbox" onClick="card('cuisine','american')">
-                <label>American</label>
+            <h1>Filters</h1>
+
+            <div class="filter_container">
+                <h2>- Cuisine Type -</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','american')">
+                    <label>American</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','chinese')">
+                    <label>Chinese</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','korean')">
+                    <label>Korean</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox">
+                    <label>Mexican</label>
+                </div>
             </div>
-            <div class="filters">
-                <input type="checkbox" onClick="card('cuisine','chinese')">
-                <label>Chinese</label>
+            
+            <div class="filter_container">
+                <h2>- Allergens -</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','american')">
+                    <label>American</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','chinese')">
+                    <label>Chinese</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('cuisine','korean')">
+                    <label>Korean</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox">
+                    <label>Mexican</label>
+                </div>
             </div>
-            <div class="filters">
-                <input type="checkbox" onClick="card('cuisine','korean')">
-                <label>Korean</label>
+
+            <div class="filter_container">
+                <h2>- Time -</h2>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
             </div>
-            <div class="filters">
-                <input type="checkbox">
-                <label>Mexican</label>
-            </div>
+            
         </form>
 
         <div id="content_container">
