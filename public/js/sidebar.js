@@ -1,54 +1,54 @@
 // /* sideBar */
-// function card(header, header_data) {
+function card(header, header_data) {
 
-//     /* grab headers from dict */
-//     let headers = Object.keys(tags);
-//     let filter_string = "";
-//     let index;
+    /* grab headers from dict */
+    let headers = Object.keys(tags);
+    let filter_string = "";
+    let index;
 
-//     /* Add cuisine value to dictionary */
-//     if (tags[header].includes(header_data)) {
-//         index = tags[header].indexOf(header_data);
-//         tags[header].splice(index, 1)
-//     } else {
-//         tags[header].push(header_data);
-//     }
+    /* Add cuisine value to dictionary */
+    if (tags[header].includes(header_data)) {
+        index = tags[header].indexOf(header_data);
+        tags[header].splice(index, 1)
+    } else {
+        tags[header].push(header_data);
+    }
 
-//     console.log(tags)
+    console.log(tags)
 
-//     /* display recipes that are in dictionary */
-//     for (let i = 0; i < headers.length; i++) {
-//         if (tags[headers[i]].length != 0) {
-//             filter_string += '[data-' + headers[i] + ']:not';
-//             for (let j = 0; j < tags[headers[i]].length; j++) {
-//                 filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):not';
-//             }
-//         } 
-//     }
+    /* display recipes that are in dictionary */
+    for (let i = 0; i < headers.length; i++) {
+        if (tags[headers[i]].length != 0) {
+            filter_string += '[data-' + headers[i] + ']:not';
+            for (let j = 0; j < tags[headers[i]].length; j++) {
+                filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):not';
+            }
+        } 
+    }
 
-//     filter_string = filter_string.substring(0, filter_string.length - 4);
+    filter_string = filter_string.substring(0, filter_string.length - 4);
 
-//     console.log(filter_string)
+    console.log(filter_string)
 
-//     // filter_string += '[data-' + headers[i] + ']:not([data-' + headers[i] + '="' + tags[headers[i]] + '"]
+    // filter_string += '[data-' + headers[i] + ']:not([data-' + headers[i] + '="' + tags[headers[i]] + '"]
 
-//     let cards = document.querySelectorAll(".minimize");
-//     for (let i = 0; i < cards.length; i++) {
-//         cards[i].setAttribute("class", "card");
-//     } 
+    let cards = document.querySelectorAll(".minimize");
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].setAttribute("class", "card");
+    } 
 
-//     if (filter_string.length == 0) {
-//         console.log("nothing");
-//     } else {
-//         let cards = document.querySelectorAll(filter_string);
-//         for (let i = 0; i < cards.length; i++) {
-//             cards[i].setAttribute("class", "minimize");
-//         }  
-//     }
-// }
+    if (filter_string.length == 0) {
+        console.log("nothing");
+    } else {
+        let cards = document.querySelectorAll(filter_string);
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].setAttribute("class", "minimize");
+        }  
+    }
+}
 
 /* sidebar */
-function card (tag) {
+function card1 (tag) {
     /* init vars */
     let index;
 
@@ -83,10 +83,10 @@ function card (tag) {
 }
 
 /* Init dict */
-// const tags = {};
+const tags = {};
 
 /* Grab info from div */
-// let filterHeaders = document.getElementById("filterData").getAttribute("data-filterHeaders").split(",");
+let filterHeaders = document.getElementById("filterData").getAttribute("data-filterHeaders").split(",");
 
 /* Init Array of tags */
 const array_tags = [];
@@ -103,9 +103,9 @@ console.log(card_attributes);
 
 
 /* Parse through list and add headers to dict*/
-// for (let i = 0; i < filterHeaders.length; i++) {
-//     tags[filterHeaders[i]] = [];
-// }
+for (let i = 0; i < filterHeaders.length; i++) {
+    tags[filterHeaders[i]] = [];
+}
 
-// console.log(filterHeaders);
-// console.log(tags);
+console.log(filterHeaders);
+console.log(tags);
