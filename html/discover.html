@@ -38,19 +38,19 @@
             <div class="filter_container">
                 <h2>- Cuisine Type -</h2>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','american')">
+                    <input type="checkbox" onClick="card('american')">
                     <label>American</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','chinese')">
+                    <input type="checkbox" onClick="card('chinese')">
                     <label>Chinese</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','korean')">
+                    <input type="checkbox" onClick="card('korean')">
                     <label>Korean</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox">
+                    <input type="checkbox" onClick="card('mexican')">
                     <label>Mexican</label>
                 </div>
             </div>
@@ -58,20 +58,20 @@
             <div class="filter_container">
                 <h2>- Allergens -</h2>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','american')">
-                    <label>American</label>
+                    <input type="checkbox" onClick="card('nuts')">
+                    <label>No Nuts</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','chinese')">
-                    <label>Chinese</label>
+                    <input type="checkbox" onClick="card('seafood')">
+                    <label>Seafood</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox" onClick="card('cuisine','korean')">
-                    <label>Korean</label>
+                    <input type="checkbox" onClick="card('dairy')">
+                    <label>Dairy Free</label>
                 </div>
                 <div class="filters">
-                    <input type="checkbox">
-                    <label>Mexican</label>
+                    <input type="checkbox" onClick="card('gluten')">
+                    <label>Gluten Free</label>
                 </div>
             </div>
 
@@ -87,7 +87,25 @@
                 <h1>Welcome</h1>
             </div>
             <div id="card_container">
-                <div class="card" data-cuisine="chinese" id="1">
+                <div id="card1" class="card" data-tag='["chinese", "gluten"]'>
+                    <img src="../public/images/gyudon.jpg" class="card_img">
+                    <div class="card_container_info">
+                        <h2 class="card_title">Chinese</h2>
+                        <ul class="card_info">
+                            <li>Time: 30min</li>
+                            <li>Serving: 2</li>
+                        </ul>
+                        <form action="/recipe" method="POST">
+                            <input class="card_id" type="id" name="id" value=1>
+                            <input class="card_link" type="submit" value="View Recipe">
+                        </form>
+                        <p>
+                            blah blah blah blah blah blah blah blah blah blah
+                            blah blah blah blah blah blah blah blah blah blah
+                        </p>
+                    </div>
+                </div>
+                <div id="card2" class="card" data-tag='["american", "nuts"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -105,7 +123,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card" data-cuisine="chinese" data-gluten="no">
+                <div id="card3" class="card" data-tag='["american", "nuts"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -123,7 +141,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card" data-cuisine="american">
+                <div id="card4" class="card" data-tag='["american", "gluten", "seafood"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -141,7 +159,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card" data-cuisine="american">
+                <div id="card5" class="card" data-tag='["american", "nuts", "dairy"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -159,7 +177,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card" data-cuisine="japanese">
+                <div id="card6" class="card" data-tag='["american", "gluten"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -177,25 +195,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card" data-cuisine="japanese">
-                    <img src="../public/images/gyudon.jpg" class="card_img">
-                    <div class="card_container_info">
-                        <h2 class="card_title">Gyudon</h2>
-                        <ul class="card_info">
-                            <li>Time: 30min</li>
-                            <li>Serving: 2</li>
-                        </ul>
-                        <form action="/recipe" method="POST">
-                            <input class="card_id" type="id" name="id" value=1>
-                            <input class="card_link" type="submit" value="View Recipe">
-                        </form>
-                        <p>
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                        </p>
-                    </div>
-                </div>
-                <div class="card" data-cuisine="american">
+                <div id="card7" class="card" data-tag='["american", "gluten"]'>
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
