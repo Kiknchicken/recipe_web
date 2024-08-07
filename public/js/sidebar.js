@@ -1,54 +1,26 @@
-// /* sideBar */
-function card(header, header_data) {
+/* sidebar slider */
+function slider (slider) {
+    if (slider.id == "slider_min") {
+        slider_min = parseInt(slider.value);
 
-    /* grab headers from dict */
-    let headers = Object.keys(tags);
-    let filter_string = "";
-    let index;
-
-    /* Add cuisine value to dictionary */
-    if (tags[header].includes(header_data)) {
-        index = tags[header].indexOf(header_data);
-        tags[header].splice(index, 1)
-    } else {
-        tags[header].push(header_data);
+        if (slider_min > slider_max) {
+            slider.value = slider_max - 5;
+        }
+        range_min.textContent = slider.value;
     }
 
-    console.log(tags)
+    if (slider.id == "slider_max") {
+        slider_max = parseInt(slider.value);
 
-    /* display recipes that are in dictionary */
-    for (let i = 0; i < headers.length; i++) {
-        if (tags[headers[i]].length != 0) {
-            filter_string += '[data-' + headers[i] + ']:not';
-            for (let j = 0; j < tags[headers[i]].length; j++) {
-                filter_string += '([data-' + headers[i] + '="' + tags[headers[i]][j] + '"]):not';
-            }
-        } 
-    }
-
-    filter_string = filter_string.substring(0, filter_string.length - 4);
-
-    console.log(filter_string)
-
-    // filter_string += '[data-' + headers[i] + ']:not([data-' + headers[i] + '="' + tags[headers[i]] + '"]
-
-    let cards = document.querySelectorAll(".minimize");
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].setAttribute("class", "card");
-    } 
-
-    if (filter_string.length == 0) {
-        console.log("nothing");
-    } else {
-        let cards = document.querySelectorAll(filter_string);
-        for (let i = 0; i < cards.length; i++) {
-            cards[i].setAttribute("class", "minimize");
-        }  
+        if (slider_max < slider_min) {
+            slider.value = slider_min + 5;
+        }
+        range_max.textContent = slider.value;
     }
 }
 
 /* sidebar */
-function card1 (tag) {
+function card (tag) {
     /* init vars */
     let index;
 
@@ -79,14 +51,7 @@ function card1 (tag) {
             card_array[i].setAttribute("class", "card");
         }
     }
-    
 }
-
-/* Init dict */
-const tags = {};
-
-/* Grab info from div */
-let filterHeaders = document.getElementById("filterData").getAttribute("data-filterHeaders").split(",");
 
 /* Init Array of tags */
 const array_tags = [];
@@ -101,11 +66,11 @@ for (let i = 0; i < card_array.length; i++) {
 
 console.log(card_attributes);
 
+/* Init vars for sliders */
+var slider_min = parseInt(document.getElementById("slider_min").value);
+var slider_max = parseInt(document.getElementById("slider_max").value);
 
-/* Parse through list and add headers to dict*/
-for (let i = 0; i < filterHeaders.length; i++) {
-    tags[filterHeaders[i]] = [];
-}
+var range_min =  document.getElementById("range_min");
+var range_max =  document.getElementById("range_max");
 
-console.log(filterHeaders);
-console.log(tags);
+

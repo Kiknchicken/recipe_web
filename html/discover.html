@@ -63,7 +63,7 @@
                 </div>
                 <div class="filters">
                     <input type="checkbox" onClick="card('seafood')">
-                    <label>Seafood</label>
+                    <label>No Seafood</label>
                 </div>
                 <div class="filters">
                     <input type="checkbox" onClick="card('dairy')">
@@ -75,11 +75,15 @@
                 </div>
             </div>
 
-            <div class="filter_container">
+            <div class="filter_container" style="height: 400px;">
                 <h2>- Time -</h2>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <div class="range_slider">
+                    <input class="slider" id="slider_min" type="range" value="10" min="1" max="100" onInput="slider(this)">
+                    <input class="slider" id="slider_max" type="range" value="90" min="1" max="100" onInput="slider(this)">
+                    <span class="range_min light left" id="range_min">10 min</span>
+                    <span class="range_max light right" id="range_max">90 min</span>
+                </div> 
             </div>
-            
         </form>
 
         <div id="content_container">
