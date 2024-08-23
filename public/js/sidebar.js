@@ -1,3 +1,61 @@
+/* Helper functions */
+function hideCards() {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].setAttribute("class", "minimize");
+    }
+}
+
+function showCards() {
+    for (let i = 0; i < cards.length; i++) {
+        let card_time = parseInt(cards[i].getAttribute("data-time"));
+
+        if (card_time >= slider_min && card_time <= slider_max) {
+            cards[i].setAttribute("class", "card");
+        } else {
+            cards[i].setAttribute("class", "minimize");
+        }
+    }
+}
+
+/* sidebar filtering */
+function filter () {
+
+    if (array_tags.length > 0) {
+        hideCards();
+
+        for (let i = 0; i < cards.length; i++) {
+            /* Flags */
+            let isTime = 0;
+            let isType = 0;
+
+            /* Vars */
+            let card_time = parseInt(cards[i].getAttribute("data-time"));
+
+            console.log(card_time);
+
+            if (card_time >= slider_min && card_time <= slider_max) {
+                for (let j = 0; j < array_tags.length; j++) {
+                    if (card_attributes[i].includes(array_tags[j])) {
+                        isType = 1;
+                    }
+                }
+            }
+
+            console.log("isType", isType);
+
+            /* Flag test */
+            if (isType == 1) {
+                cards[i].setAttribute("class", "card");
+            }
+            else {
+                cards[i].setAttribute("class", "minimize");
+            }
+        }
+    } else {
+        showCards();
+    }
+}
+
 /* sidebar slider */
 function slider (slider) {
     if (slider.id == "slider_min") {
@@ -17,9 +75,11 @@ function slider (slider) {
         }
         range_max.textContent = slider.value;
     }
+
+    filter()
 }
 
-/* sidebar */
+/* sidebar checkboxes */
 function card (tag) {
     /* init vars */
     let index;
@@ -32,36 +92,21 @@ function card (tag) {
         array_tags.push(tag);
     }
 
-    for (let i = 0; i < card_array.length; i++) {
-        card_array[i].setAttribute("class", "minimize");
-    }
-
     console.log(array_tags);
 
-    if (array_tags.length > 0) {
-        for (let i = 0; i < card_attributes.length; i++) {
-            for (let j = 0; j < array_tags.length; j++) {
-                if (card_attributes[i].includes(array_tags[j])) {
-                    document.getElementById('card'+(i+1).toString()).setAttribute("class", "card");
-                }
-            }
-        }
-    } else {
-        for (let i = 0; i < card_array.length; i++) {
-            card_array[i].setAttribute("class", "card");
-        }
-    }
+    filter();
 }
 
 /* Init Array of tags */
-const array_tags = [];
+var array_tags = [];
 const card_attributes = [];
+var cards_shown = [];
 
 /* Get and Add arrays of tags from cards */
-const card_array = document.querySelectorAll('[data-tag');
+const cards = document.querySelectorAll('[data-tag');
 
-for (let i = 0; i < card_array.length; i++) {
-    card_attributes.push(card_array[i].getAttribute('data-tag'));
+for (let i = 0; i < cards.length; i++) {
+    card_attributes.push(cards[i].getAttribute('data-tag'));
 }
 
 console.log(card_attributes);

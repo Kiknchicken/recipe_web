@@ -78,10 +78,10 @@
             <div class="filter_container" style="height: 400px;">
                 <h2>- Time -</h2>
                 <div class="range_slider">
-                    <input class="slider" id="slider_min" type="range" value="10" min="1" max="100" onInput="slider(this)">
-                    <input class="slider" id="slider_max" type="range" value="90" min="1" max="100" onInput="slider(this)">
-                    <span class="range_min light left" id="range_min">10 min</span>
-                    <span class="range_max light right" id="range_max">90 min</span>
+                    <input class="slider" id="slider_min" type="range" value="1" min="1" max="100" onInput="slider(this)">
+                    <input class="slider" id="slider_max" type="range" value="100" min="1" max="100" onInput="slider(this)">
+                    <span class="range_min light left" id="range_min">1 min</span>
+                    <span class="range_max light right" id="range_max">100 min</span>
                 </div> 
             </div>
         </form>
@@ -91,11 +91,11 @@
                 <h1>Welcome</h1>
             </div>
             <div id="card_container">
-                <div id="card1" class="card" data-tag='["chinese", "gluten"]'>
-                    <img src="../public/images/gyudon.jpg" class="card_img">
+                <div id="card1" class="card" data-tag='["chinese", "gluten"]' data-time="30">
+                    <img src="../public/images/gyudon.jpg">
                     <div class="card_container_info">
-                        <h2 class="card_title">Chinese</h2>
-                        <ul class="card_info">
+                        <h2>Chinese</h2>
+                        <ul>
                             <li>Time: 30min</li>
                             <li>Serving: 2</li>
                         </ul>
@@ -109,25 +109,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="card2" class="card" data-tag='["american", "nuts"]'>
-                    <img src="../public/images/gyudon.jpg" class="card_img">
-                    <div class="card_container_info">
-                        <h2 class="card_title">Gyudon</h2>
-                        <ul class="card_info">
-                            <li>Time: 30min</li>
-                            <li>Serving: 2</li>
-                        </ul>
-                        <form action="/recipe" method="POST">
-                            <input class="card_id" type="id" name="id" value=1>
-                            <input class="card_link" type="submit" value="View Recipe">
-                        </form>
-                        <p>
-                            blah blah blah blah blah blah blah blah blah blah
-                            blah blah blah blah blah blah blah blah blah blah
-                        </p>
-                    </div>
-                </div>
-                <div id="card3" class="card" data-tag='["american", "nuts"]'>
+                <div id="card2" class="card" data-tag='["american", "nuts"]' data-time="20">
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -145,7 +127,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="card4" class="card" data-tag='["american", "gluten", "seafood"]'>
+                <div id="card3" class="card" data-tag='["american", "nuts"]' data-time="25">
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -163,7 +145,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="card5" class="card" data-tag='["american", "nuts", "dairy"]'>
+                <div id="card4" class="card" data-tag='["american", "gluten", "seafood"]' data-time="40">
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -181,7 +163,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="card6" class="card" data-tag='["american", "gluten"]'>
+                <div id="card5" class="card" data-tag='["american", "nuts", "dairy"]' data-time="20">
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>
@@ -199,7 +181,25 @@
                         </p>
                     </div>
                 </div>
-                <div id="card7" class="card" data-tag='["american", "gluten"]'>
+                <div id="card6" class="card" data-tag='["american", "gluten"]' data-time="50">
+                    <img src="../public/images/gyudon.jpg" class="card_img">
+                    <div class="card_container_info">
+                        <h2 class="card_title">Gyudon</h2>
+                        <ul class="card_info">
+                            <li>Time: 30min</li>
+                            <li>Serving: 2</li>
+                        </ul>
+                        <form action="/recipe" method="POST">
+                            <input class="card_id" type="id" name="id" value=1>
+                            <input class="card_link" type="submit" value="View Recipe">
+                        </form>
+                        <p>
+                            blah blah blah blah blah blah blah blah blah blah
+                            blah blah blah blah blah blah blah blah blah blah
+                        </p>
+                    </div>
+                </div>
+                <div id="card7" class="card" data-tag='["american", "gluten"]' data-time="10">
                     <img src="../public/images/gyudon.jpg" class="card_img">
                     <div class="card_container_info">
                         <h2 class="card_title">Gyudon</h2>

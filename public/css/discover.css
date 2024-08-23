@@ -57,7 +57,7 @@ li {
     margin: 0px 10px;
 }
 
-.card_title{
+.card h2{
     margin-bottom: 0px;
 }
 
@@ -66,7 +66,7 @@ li {
     transition: 0.5s;
 }
 
-.card_img {
+.card img {
     width: 250px;
     height: 200px;
     object-fit: cover;
