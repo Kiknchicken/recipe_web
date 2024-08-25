@@ -32,15 +32,27 @@
 
     <div id="discover_container">
         <form id="sidebar_container">
-            <h2>Cuisine</h2>
-            <div class="filters">
-                <input type="checkbox" onClick="card('cuisine','chinese')">
-                <label>Chinese</label>
+
+            <div class="filter_container">
+                <h2>Cuisine</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('chinese')">
+                    <label>Chinese</label>
+                </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('japanese')">
+                    <label>Japanese</label>
+                </div>
             </div>
-            <div class="filters">
-                <input type="checkbox" onClick="card('cuisine','japanese')">
-                <label>Japanese</label>
+
+            <div class="filter_container">
+                <h2>Allergens</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('vegetarian')">
+                    <label>No Nuts</label>
+                </div>
             </div>
+            
         </form>
 
         <div id="content_container">
@@ -50,7 +62,7 @@
 
             <div id="card_container">
                 <% for (let i = 0; i < num_cards; i++) {%>
-                    <div class="card" data-cuisine=<%= data[i][9] %> data-vegetarian=<%= data[i][10] %>>
+                    <div class="card" data-tag=<%data[i][9] %>>
                         <img src=<%= data[i][2] %> class="card_img">
                         <div class= "card_container_info">
                             <h2 class="card_title"><%= data[i][1] %></h2>
