@@ -43,7 +43,8 @@ async function getTags(data) {
         if (data[i][9].includes(",")) {
             let dataSplit = data[i][9].split(",");
 
-            for (let tag in dataSplit) {
+            for (let tag of dataSplit) {
+                console.log(tag);
                 tags.push(tag);
             }
         } else {
