@@ -40,7 +40,11 @@ async function getTags(data) {
     var tags = [];
 
     for (let i = 0; i < data.length; i++) {
-        tags.push(data[i][9]);
+        if (data[i][9].length > 1) {
+            tags.push(data[i][9].split(","))
+        } else {
+            tags.push(data[i][9]);
+        }
     }
 
     var tagSet = new Set(tags);
