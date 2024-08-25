@@ -44,7 +44,6 @@ async function getTags(data) {
             let dataSplit = data[i][9].split(",");
 
             for (let tag of dataSplit) {
-                console.log(tag);
                 tags.push(tag);
             }
         } else {
@@ -53,7 +52,6 @@ async function getTags(data) {
     }
 
     var tagSet = new Set(tags);
-    console.log(tagSet);
 
     return tagSet;
 }
