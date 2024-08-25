@@ -52,7 +52,16 @@
                     <label>No Nuts</label>
                 </div>
             </div>
-            
+
+            <div class="filter_container" style="height: 400px;">
+                <h2>- Time -</h2>
+                <div class="range_slider">
+                    <input class="slider" id="slider_min" type="range" value="1" min="1" max="100" onInput="slider(this)">
+                    <input class="slider" id="slider_max" type="range" value="100" min="1" max="100" onInput="slider(this)">
+                    <span class="range_min light left" id="range_min">1 min</span>
+                    <span class="range_max light right" id="range_max">100 min</span>
+                </div> 
+            </div>
         </form>
 
         <div id="content_container">
