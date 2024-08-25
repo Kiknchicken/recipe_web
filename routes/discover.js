@@ -40,8 +40,12 @@ async function getTags(data) {
     var tags = [];
 
     for (let i = 0; i < data.length; i++) {
-        if (data[i][9].length > 1) {
-            tags.push(data[i][9].split(","))
+        if (data[i][9].includes(",")) {
+            let dataSplit = data[i][9].split(",");
+
+            for (let tag in dataSplit) {
+                tags.push(tag);
+            }
         } else {
             tags.push(data[i][9]);
         }
