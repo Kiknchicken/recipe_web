@@ -12,6 +12,7 @@ p {
 
 ul {
     padding-left: 20px;
+    margin: 25px 0px;
 }
 
 li {
@@ -20,9 +21,9 @@ li {
 
 #discover_container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    margin: 90px 250px 50px 250px;
+    margin: 80px 250px 50px 300px;
 }
 
 #header {
@@ -57,7 +58,8 @@ li {
     margin: 0px 10px;
 }
 
-.card_title{
+.card h2{
+    font-size: 27px;
     margin-bottom: 0px;
 }
 
@@ -66,7 +68,7 @@ li {
     transition: 0.5s;
 }
 
-.card_img {
+.card img {
     width: 250px;
     height: 200px;
     object-fit: cover;
@@ -100,20 +102,104 @@ li {
 #sidebar_container {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    height: 855px;
+    width: 280px;
+    height: 860px;
     position: fixed;
     left: 0px;
+    padding: 35px;
     background-color: var(--smokey_white);
-    padding: 50px 25px 25px 60px;
+}
+
+#sidebar_container h1 {
+    margin: 20px 0px 0px 0px;
+    font-size: 35px;
+    border-bottom: solid 2px black;
+}
+
+#sidebar_container h2 {
+    margin: 0px 0px 20px 0px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.filter_container {
+    margin-top: 50px;
 }
 
 .filters {
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .filters input{
-    margin-right: 10px;
+    margin-right: 13px;
+}
+
+/* Sidebar Slider */
+.slider {
+    width: 210px;
+    height: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+.slider,
+.slider::-webkit-slider-runnable-track,
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: none;
+}
+.slider::-webkit-slider-runnable-track {
+    width: 200px;
+    height: 1px;
+    background: #003D7C;
+}
+
+.slider:nth-child(2)::-webkit-slider-runnable-track{
+    background: none;
+}
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    margin-top: -7px;
+    background: #fff;
+    border: 1px solid #003D7C;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+
+.slider:nth-child(1)::-webkit-slider-thumb{
+    z-index: 2;
+}
+
+.range_slider{
+    position: relative;
+    height: 60px;
+    width: 210px;
+    display: inline-block;
+    margin-top: -5px;
+}
+.range_slider input{
+    position: absolute;
+}
+.range_slider{
+    position: absolute;
+}
+
+.range_slider span{
+    position: absolute;
+    margin: 35px 20px;
+    width: 50px;
+    text-align: center;
+}
+
+.range_slider .right{
+    position: relative;
+    float: right;
 }

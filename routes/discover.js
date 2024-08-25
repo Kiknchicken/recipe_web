@@ -36,30 +36,38 @@ async function getRecipe() {
     return data;
 }
 
-async function getTags () {
-    //Connection to db
-    const client = new Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-        rejectUnauthorized: false
+async function getTags(data) {
+    var tags = [];
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i][9].includes(",")) {
+            let dataSplit = data[i][9].split(",");
+
+            for (let tag of dataSplit) {
+                tags.push(tag);
+            }
+        } else {
+            tags.push(data[i][9]);
         }
-    });
+    }
 
-    client.connect();
+    var tagSet = new Set(tags);
 
-    const query = {
-        text: "SELECT * FROM tags",
-        rowMode: 'array'
-    };
+    return tagSet;
 }
 
 //Routes
 router.get("/", async (req, res) => {
     console.log("discover");
 
+    /* Grab data from db */
     var data = await getRecipe();
     var num_cards = data.length;
-    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data});
+
+    /* Grab nonDup array of tags */
+    var tags = await getTags(data);
+
+    res.render("discover", { name: 'Guest', num_cards: num_cards, data: data, tags: tags});
 
     console.log(path.join(__dirname, '..', 'public'));
 });

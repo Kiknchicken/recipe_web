@@ -28,30 +28,69 @@
         </div>
     </header>
 
-    <div id="discover_container">
-        <div id="header">
-            <h1>Welcome <%= name %></h1>
-        </div>
+    <div id="filterData" data-filterHeaders="cuisine,vegetarian"></div>
 
-        <div id="card_container">
-            <% for (let i = 0; i < num_cards; i++) {%>
-                <div class="card">
-                    <img src=<%= data[i][2] %> class="card_img">
-                    <div class= "card_container_info">
-                        <h2 class="card_title"><%= data[i][1] %></h2>
-                        <ul class="card_info">
-                            <li>Servings: <%= data[i][5] %></li>
-                            <li>Time: <%= data[i][4] %></li>
-                        </ul>
-                        <form action="/recipe" method="POST">
-                            <input class="card_id" type="id" name="id" value=<%= data[i][0] %>>
-                            <input class="card_link" type="submit" value="View Recipe">
-                        </form>
-                        <p><%= data[i][6] %></p>
-                    </div>
+    <div id="discover_container">
+        <form id="sidebar_container">
+            <h1>Filters</h1>
+
+            <div class="filter_container">
+                <h2>- Cuisine Type -</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('chinese')">
+                    <label>Chinese</label>
                 </div>
-            <% } %>
-        </div>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('japanese')">
+                    <label>Japanese</label>
+                </div>
+            </div>
+
+            <div class="filter_container">
+                <h2>- Allergens -</h2>
+                <div class="filters">
+                    <input type="checkbox" onClick="card('vegetarian')">
+                    <label>Vegetarian</label>
+                </div>
+            </div>
+
+            <div class="filter_container" style="height: 400px;">
+                <h2>- Time -</h2>
+                <div class="range_slider">
+                    <input class="slider" id="slider_min" type="range" value="1" min="1" max="100" onInput="slider(this)">
+                    <input class="slider" id="slider_max" type="range" value="100" min="1" max="100" onInput="slider(this)">
+                    <span class="range_min light left" id="range_min">1 min</span>
+                    <span class="range_max light right" id="range_max">100 min</span>
+                </div> 
+            </div>
+        </form>
+
+        <div id="content_container">
+            <div id="header">
+                <h1>Welcome <%= name %></h1>
+            </div>
+
+            <div id="card_container">
+                <% for (let i = 0; i < num_cards; i++) {%>
+                    <div id="card"<%= data[i][0] %> class="card" data-tag=<%= data[i][9] %> data-time= <%= data[i][4] %>>
+                        <img src=<%= data[i][2] %> class="card_img">
+                        <div class= "card_container_info">
+                            <h2 class="card_title"><%= data[i][1] %></h2>
+                            <ul class="card_info">
+                                <li>Servings: <%= data[i][5] %></li>
+                                <li>Time: <%= data[i][4] %></li>
+                            </ul>
+                            <form action="/recipe" method="POST">
+                                <input class="card_id" type="id" name="id" value=<%= data[i][0] %>>
+                                <input class="card_link" type="submit" value="View Recipe">
+                            </form>
+                            <p><%= data[i][6] %></p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>        
     </div>
+    <script src="js/sidebar.js"></script>
 </body>
 </html>
