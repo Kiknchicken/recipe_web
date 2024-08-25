@@ -25,11 +25,13 @@ const userRoute = require('./routes/userLanding');
 const userDiscover = require('./routes/discover');
 const recipe = require('./routes/recipe');
 const userRecipes = require('./routes/userRecipes');
+const addRecipe = require('./routes/addRecipe')
 
 app.use("/home", userRoute);
 app.use("/discover", userDiscover);
 app.use("/recipe", recipe);
 app.use("/userRecipes", userRecipes);
+app.use("/addRecipe", addRecipe);
 
 //Setting up statics
 app.use(express.static(path.join(__dirname, 'public')));
