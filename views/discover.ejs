@@ -62,7 +62,7 @@
 
             <div id="card_container">
                 <% for (let i = 0; i < num_cards; i++) {%>
-                    <div class="card" data-tag=<%data[i][9] %>>
+                    <div id="card"<%= data[i][0] %> class="card" data-tag=<%= data[i][9] %> data-time= <%= data[i][4] %>>
                         <img src=<%= data[i][2] %> class="card_img">
                         <div class= "card_container_info">
                             <h2 class="card_title"><%= data[i][1] %></h2>
