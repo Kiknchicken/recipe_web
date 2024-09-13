@@ -9,7 +9,7 @@ router.use(express.static(path.join(__dirname, '..', 'public')));
 
 //Routes
 router.get("/", async (req, res) => {
-    res.render("addRecipe");
+    res.render("wip");
 });
 
 router.post("/", (req, res) => {
