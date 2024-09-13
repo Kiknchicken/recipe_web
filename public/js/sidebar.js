@@ -103,7 +103,7 @@ const card_attributes = [];
 var cards_shown = [];
 
 /* Get and Add arrays of tags from cards */
-const cards = document.querySelectorAll('[data-tag');
+const cards = document.querySelectorAll('[data-tag]');
 
 for (let i = 0; i < cards.length; i++) {
     card_attributes.push(cards[i].getAttribute('data-tag'));
